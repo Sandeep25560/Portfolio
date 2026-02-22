@@ -18,28 +18,28 @@ const projects: Project[] = [
   {
     title: "E-Commerce Website",
     description:
-      "A responsive E-Commerce website focusing on performance and user-centric design. Reduced bounce rate by 15%.",
+      "Built a responsive e-commerce platform with a strong focus on clean UI, fast load times, and smooth checkout flow. Improved user retention and reduced bounce rate by 15% through performance tuning and better UX decisions.",
     tech: ["React", "TypeScript"],
     github: "https://github.com/Sandeep25560/E-Commerce-Website/tree/master",
   },
   {
     title: "Employee Management System",
     description:
-      "Full-stack system with React.js, ASP.NET Core, and MySQL. Handled 1000+ users with seamless CRUD functionality.",
+      "Developed a full-stack employee management system handling 1000+ users with secure authentication and role-based access. Designed scalable APIs and optimized MySQL queries to ensure reliable CRUD operations and stable performance under load.",
     tech: ["React", "ASP.NET Core", "MySQL"],
     github: "https://github.com/Sandeep25560/Employee_Management",
   },
   {
     title: "TravelSync",
     description:
-      "Performance-optimized travel planner built with Flask and SQLAlchemy. Reduced query times by 30%.",
+      "Created a travel planning application that allows users to organize itineraries and manage trips efficiently. Optimized SQLAlchemy queries and backend logic, reducing query time by 30% and improving overall responsiveness.",
     tech: ["Flask", "SQLAlchemy", "Python"],
     github: "https://github.com/Sandeep25560/travel-planner",
   },
   {
     title: "Task Management Application",
     description:
-      "Cross-platform task app using React and ASP.NET Core. Achieved 98% test coverage and smooth data syncing.",
+      "Built a cross-platform task management app with real-time data syncing and structured backend APIs. Achieved 98% test coverage and ensured reliable performance through strong validation, testing, and API design.",
     tech: ["React", "ASP.NET Core", "SQL Server"],
     github: "https://github.com/Sandeep25560/Task-Management-system",
   },

@@ -74,7 +74,7 @@ const Home: FC = () => {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.6, duration: 0.5 }}
                 >
-                    Software Engineer with 2+ years of experience in full-stack development. Proven track record of shipping high-quality
+                    Software Engineer with 3+ years of experience in full-stack development. Proven track record of shipping high-quality
                     products with a focus on scalability, optimization, and user experience. Adept at translating business and product ideas
                     into engineering solutions and collaborating in cross-functional teams to drive product development.
                 </motion.p>

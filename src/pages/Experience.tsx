@@ -5,6 +5,7 @@ interface ExperienceItem {
   title: string;
   company: string;
   duration: string;
+  subtitle?: string;
   details: string[];
 }
 
@@ -13,48 +14,36 @@ const experienceData: ExperienceItem[] = [
     title: "Senior Software Engineer",
     company: "ValueLabs",
     duration: "Sep 2023 – Jul 2024",
+    subtitle:
+      "Promoted twice within 36 months (Intern → Software Engineer → Senior Software Engineer)",
     details: [
-        "Led the development of a healthcare application using React Micro-frontend Architecture.",
-
-        "Improved scalability and reduced feature delivery time by 25%.",
-        
-        "Spearheaded the implementation of engineering processes, tools, and systems.",
-        
-        "Enhanced team productivity and scalability through process improvements.",
-        
-        "Mentored junior developers and optimized Git workflows, boosting collaboration and code quality."
+      "Designed and built scalable backend services using C#, ASP.NET Core, and MVC architecture for enterprise web applications.",
+      "Developed RESTful APIs and SOAP-based web services to enable integrations across distributed systems.",
+      "Optimized SQL Server queries using T-SQL, improving backend performance by 30% and reducing latency by 200ms.",
+      "Contributed to microservices deployed with Docker and Kubernetes in AWS to improve scalability and deployment consistency.",
+      "Diagnosed and resolved complex production issues through advanced debugging and log analysis with engineering and product teams.",
+      "Led code reviews, added NUnit unit tests, and fixed multithreading and concurrency issues to strengthen production stability.",
     ],
   },
   {
     title: "Software Engineer",
     company: "ValueLabs",
-    duration: "Apr 2022 – Sep 2023",
+    duration: "Feb 2022 – Sep 2023",
     details: [
-        "Developed reusable React components.",
-
-        "Enhanced code maintainability through component creation.",
-        
-        "Improved application performance by optimizing architecture.",
-        
-        "Contributed to a 20% increase in user engagement.",
-        
-        "Incorporated customer feedback into product features."
+      "Developed backend components using .NET Core and WCF services following SDLC and Agile development practices.",
+      "Designed relational database schemas and indexing strategies, improving data retrieval speed by 25%.",
+      "Contributed to CI/CD pipelines using Jenkins and GitHub Actions to support automated builds and continuous deployment.",
+      "Created UML diagrams and technical documentation to support system architecture and future enhancements.",
     ],
   },
   {
     title: "Software Engineer Intern",
     company: "ValueLabs",
-    duration: "Jan 2022 – Mar 2022",
+    duration: "Sep 2021 – Feb 2022",
     details: [
-        "Designed and implemented React components.",
-
-        "Reduced task time by 20% through efficient coding.",
-        
-        "Improved code stability using Jest testing.",
-        
-        "Collaborated with senior engineers on client features.",
-        
-        "Improved application performance metrics through collaborative efforts."
+      "Assisted in building server-side APIs using ASP.NET MVC and SQL Server for enterprise web applications.",
+      "Supported Azure deployments and Linux/Unix server configurations for development and lower environments.",
+      "Researched performance optimization approaches and helped improve API response time by 20%.",
     ],
   },
 ];
@@ -91,10 +80,22 @@ const Experience: FC = () => {
               <h3 className="text-xl font-semibold text-blue-500 dark:text-blue-400">
                 {exp.title}
               </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">{exp.company}</p>
-              <p className="text-sm text-gray-500 dark:text-gray-500 italic mb-4">{exp.duration}</p>
 
-              <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                {exp.company}
+              </p>
+
+              <p className="text-sm text-gray-500 dark:text-gray-500 italic">
+                {exp.duration}
+              </p>
+
+              {exp.subtitle && (
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">
+                  {exp.subtitle}
+                </p>
+              )}
+
+              <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300 mt-4">
                 {exp.details.map((point, pointIdx) => (
                   <li key={pointIdx}>{point}</li>
                 ))}

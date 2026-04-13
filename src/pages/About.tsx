@@ -25,7 +25,7 @@ const About: FC = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
         >
-          I'm a passionate Software Engineer with 3+ years of experience in full-stack development. 
+          I'm a passionate Software Engineer with 5 years of experience in full-stack development. 
           I focus on building scalable, high-performing applications using React, TypeScript, Flask, ASP.NET Core 
           and more. I enjoy solving real-world problems with clean code and elegant UIs.
         </motion.p>
@@ -110,7 +110,7 @@ const About: FC = () => {
               "React", "TypeScript", "JavaScript", 
               "Python", "Flask", "ASP.NET Core",
               "PostgreSQL", "Angular", "MySQL",
-              "Tailwind CSS", "Docker", "AWS"
+              "Tailwind CSS", "Docker", "AWS","Azure"
             ].map((skill, index) => (
               <motion.div
                 key={index} 

@@ -74,7 +74,7 @@ const Home: FC = () => {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.6, duration: 0.5 }}
                 >
-                    Software Engineer with 3+ years of experience in full-stack development. Proven track record of shipping high-quality
+                    Software Engineer with 5 years of experience in full-stack development. Proven track record of shipping high-quality
                     products with a focus on scalability, optimization, and user experience. Adept at translating business and product ideas
                     into engineering solutions and collaborating in cross-functional teams to drive product development.
                 </motion.p>
@@ -130,7 +130,7 @@ const Home: FC = () => {
                         <FiLinkedin size={20} />
                     </a>
                     <a
-                        href="https://drive.google.com/uc?export=download&id=1O0wckIS39ke68kRrq_G7ScFDAg0kue47"
+                        href="https://drive.google.com/file/d/1oZFKjla3EL_PQ6KeVaOX7dAcRhJpRCkG/view"
                         className="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
                         download="Sandeep_Enamandala_Resume.pdf"
                     >

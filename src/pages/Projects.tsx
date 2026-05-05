@@ -41,11 +41,11 @@ const caseStudies: CaseStudy[] = [
   },
   {
   title: "SentimentFlow – Sentiment Intelligence Platform",
-  hook: "A sentiment analysis workflow that turns unstructured text into emotional signals and decision-ready insights.",
+  hook: "A sentiment analysis workflow that turns speech into emotional signals and decision-ready insights.",
   problem:
     "Teams collect user feedback, reviews, and messages, but raw text is difficult to understand at scale. Without structured sentiment signals, useful patterns stay hidden inside unorganized feedback.",
   solution:
-    "Built a sentiment intelligence workflow that classifies text, detects emotional tone, and presents analytics-ready outputs through a clean interface for interpreting feedback trends.",
+    "Built real-time speech-to-emotion system integrating Deepgram ASR and OpenAI NLP via WebSocket pipeline with sub-2-second latency; deployed on AWS with auto-scaling.",
   impact: [
     "NLP-based sentiment classification",
     "Analytics-ready emotional signals",

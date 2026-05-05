@@ -188,7 +188,7 @@ const Navbar: FC = () => {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="relative bg-white dark:bg-gray-900 rounded-xl max-w-md w-full mx-4 p-6 shadow-2xl"
+              className="relative bg-white dark:bg-gray-900 rounded-3xl max-w-md w-full mx-4 p-6 shadow-2xl border border-gray-200 dark:border-gray-800"
               onClick={(e) => e.stopPropagation()}
             >
               <button
@@ -199,7 +199,7 @@ const Navbar: FC = () => {
               </button>
 
               <div className="flex flex-col items-center gap-6">
-                <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-400 dark:border-blue-600">
+                <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-400 dark:border-blue-600 shadow-xl">
                   <img 
                     src={largeProfileImage} 
                     alt="Sandeep Enamandala" 
@@ -209,10 +209,10 @@ const Navbar: FC = () => {
                 </div>
 
                 <div className="text-center">
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Sandeep Enamandala</h2>
-                  <p className="text-blue-500 dark:text-blue-400">Full Stack Developer</p>
+                  <h2 className="text-3xl font-black text-gray-900 dark:text-white">Sandeep Enamandala</h2>
+                  <p className="text-blue-500 dark:text-blue-400 font-semibold">Full Stack Developer</p>
                   <p className="mt-2 text-gray-600 dark:text-gray-300 max-w-md">
-                    Passionate about creating efficient, scalable web applications
+                    Building secure, scalable systems with React, ASP.NET Core, and SQL.
                   </p>
                 </div>
 
@@ -222,7 +222,7 @@ const Navbar: FC = () => {
                       href="https://github.com/Sandeep25560" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors hover:text-gray-900 dark:hover:text-white"
+                      className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:scale-110 transition-all hover:text-gray-900 dark:hover:text-white"
                       aria-label="GitHub"
                     >
                       <FiGithub size={20} />
@@ -231,33 +231,38 @@ const Navbar: FC = () => {
                       href="https://www.linkedin.com/in/enamandala" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors hover:text-blue-600"
+                      className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:scale-110 transition-all hover:text-blue-600"
                       aria-label="LinkedIn"
                     >
                       <FiLinkedin size={20} />
                     </a>
                   </div>
 
-                  <div className="flex flex-col gap-2">
-                    <a
+                  <div className="flex flex-col gap-3">
+                    <motion.a
                       href={resumeLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors"
+                      whileHover={{ y: -2, scale: 1.01 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="group relative overflow-hidden flex items-center justify-center gap-3 px-5 py-3.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-bold shadow-lg shadow-blue-500/25"
                     >
-                      <FiFileText size={18} />
+                      <span className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-colors" />
+                      <FiFileText size={20} />
                       <span>View Resume</span>
-                    </a>
+                    </motion.a>
 
-                    <a
+                    <motion.a
                       href={resumeLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 px-4 py-2 border border-blue-500 text-blue-500 hover:bg-blue-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                      whileHover={{ y: -2, scale: 1.01 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="flex items-center justify-center gap-3 px-5 py-3.5 border-2 border-blue-500 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/30 rounded-2xl font-bold transition-colors"
                     >
-                      <FiDownload size={18} />
+                      <FiDownload size={20} />
                       <span>Download Resume</span>
-                    </a>
+                    </motion.a>
                   </div>
                 </div>
               </div>

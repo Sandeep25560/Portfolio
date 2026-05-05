@@ -28,6 +28,7 @@ const Navbar: FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [profileModalOpen, setProfileModalOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const resumeLink = "https://drive.google.com/file/d/1NPXt0eGRGW3F57en7LmZFJ_h0DJyt1W5/view?usp=drivesdk";
 
   const links: NavLink[] = [
     { name: "Home", target: "home" },
@@ -239,7 +240,7 @@ const Navbar: FC = () => {
 
                   <div className="flex flex-col gap-2">
                     <a
-                      href="https://drive.google.com/file/d/1oZFKjla3EL_PQ6KeVaOX7dAcRhJpRCkG/view"
+                      href={resumeLink}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors"
@@ -249,9 +250,10 @@ const Navbar: FC = () => {
                     </a>
 
                     <a
-                      href="https://drive.google.com/file/d/1oZFKjla3EL_PQ6KeVaOX7dAcRhJpRCkG/view"
+                      href={resumeLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center justify-center gap-2 px-4 py-2 border border-blue-500 text-blue-500 hover:bg-blue-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
-                      download="Sandeep_Enamandala_Resume.pdf"
                     >
                       <FiDownload size={18} />
                       <span>Download Resume</span>

@@ -40,6 +40,21 @@ const caseStudies: CaseStudy[] = [
     github: "https://github.com/Sandeep25560",
   },
   {
+  title: "SentimentFlow — Sentiment Intelligence Platform",
+  hook: "Built to turn unstructured text into clear emotional signals and decision-ready insights.",
+  problem:
+    "Teams often collect feedback from users, reviews, and messages, but the raw text is difficult to understand at scale. The challenge is converting emotional tone into useful signals without making users manually categorize everything.",
+  solution:
+    "Designed a sentiment analysis workflow that classifies text, surfaces emotional trends, and presents results in a simple analytics-focused interface. The project demonstrates NLP workflow design, classification logic, and product thinking around feedback intelligence.",
+  impact: [
+    "NLP-based sentiment classification",
+    "Analytics-ready emotional signals",
+    "Clean workflow for unstructured feedback"
+  ],
+  tech: ["React", "Python", "Flask", "NLP", "Machine Learning"],
+  github: "https://github.com/Sandeep25560/sentimentflow",
+}
+  {
     title: "Employee Management System",
     hook: "A practical enterprise-style system focused on authentication, roles, data operations, and backend reliability.",
     problem:

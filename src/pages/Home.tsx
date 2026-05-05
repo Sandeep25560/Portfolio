@@ -60,7 +60,11 @@ const Home: FC = () => {
                     </div>
                     <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8">
                         <ScrollLink to="projects" smooth duration={600} className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full text-white font-semibold shadow-lg transition-all hover:shadow-xl cursor-pointer flex items-center gap-2">Explore Case Studies <FiArrowRight size={18} /></ScrollLink>
-                        <a href={resumeLink} target="_blank" rel="noopener noreferrer" className="bg-transparent border-2 border-blue-500 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-800 px-6 py-3 rounded-full font-semibold shadow-lg transition-all flex items-center gap-2"><FiDownload size={18} /> Resume</a>
+                        <motion.a href={resumeLink} target="_blank" rel="noopener noreferrer" whileHover={{ y: -2, scale: 1.01 }} whileTap={{ scale: 0.98 }} className="group relative overflow-hidden flex items-center gap-3 px-6 py-3.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-bold shadow-lg shadow-blue-500/25">
+                            <span className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-colors" />
+                            <FiDownload size={18} />
+                            <span>Resume</span>
+                        </motion.a>
                     </div>
                     <div className="flex justify-center lg:justify-start gap-4">
                         <a href="https://github.com/Sandeep25560" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full glass-card hover:scale-110 transition-transform" aria-label="GitHub"><FiGithub size={20} /></a>

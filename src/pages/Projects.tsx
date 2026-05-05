@@ -4,44 +4,35 @@ import * as FaIcons from "react-icons/fa";
 import React from "react";
 
 const GithubIcon = FaIcons.FaGithub as React.ComponentType;
-const ExternalLinkIcon = FaIcons.FaExternalLinkAlt as React.ComponentType;
 
 interface Project {
   title: string;
   description: string;
   tech: string[];
   github?: string;
-  demo?: string;
 }
 
 const projects: Project[] = [
   {
-    title: "E-Commerce Website",
+    title: "SmartSpend – Predictive Budgeting Platform",
     description:
-      "Built a responsive e-commerce platform with a strong focus on clean UI, fast load times, and smooth checkout flow. Improved user retention and reduced bounce rate by 15% through performance tuning and better UX decisions.",
-    tech: ["React", "TypeScript"],
-    github: "https://github.com/Sandeep25560/E-Commerce-Website/tree/master",
+      "Built an AI-powered financial intelligence platform that analyzes spending patterns and predicts budget burn rate. Designed ML-integrated APIs and interactive dashboards to help users make smarter financial decisions.",
+    tech: ["React", "Flask", "Machine Learning", "MySQL"],
+    github: "https://github.com/Sandeep25560",
+  },
+  {
+    title: "Planventory – Inventory Planning System",
+    description:
+      "Developed a full-stack inventory and ordering system for real-world store workflows. Implemented JWT authentication, store-level configuration, and scalable backend APIs for managing products and distributors.",
+    tech: ["React", "ASP.NET Core", "MySQL"],
+    github: "https://github.com/Sandeep25560",
   },
   {
     title: "Employee Management System",
     description:
-      "Developed a full-stack employee management system handling 1000+ users with secure authentication and role-based access. Designed scalable APIs and optimized MySQL queries to ensure reliable CRUD operations and stable performance under load.",
+      "Designed and built a full-stack employee system with secure authentication, role-based access, and optimized backend queries for high-performance CRUD operations.",
     tech: ["React", "ASP.NET Core", "MySQL"],
     github: "https://github.com/Sandeep25560/Employee_Management",
-  },
-  {
-    title: "TravelSync",
-    description:
-      "Created a travel planning application that allows users to organize itineraries and manage trips efficiently. Optimized SQLAlchemy queries and backend logic, reducing query time by 30% and improving overall responsiveness.",
-    tech: ["Flask", "SQLAlchemy", "Python"],
-    github: "https://github.com/Sandeep25560/travel-planner",
-  },
-  {
-    title: "Task Management Application",
-    description:
-      "Built a cross-platform task management app with real-time data syncing and structured backend APIs. Achieved 98% test coverage and ensured reliable performance through strong validation, testing, and API design.",
-    tech: ["React", "ASP.NET Core", "SQL Server"],
-    github: "https://github.com/Sandeep25560/Task-Management-system",
   },
 ];
 
@@ -49,29 +40,27 @@ const Projects: FC = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900 text-gray-900 dark:text-white px-4 py-20 transition-colors duration-300"
+      className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900 text-gray-900 dark:text-white px-4 py-20"
     >
       <div className="max-w-6xl mx-auto w-full">
         <motion.h2
           className="text-3xl sm:text-4xl font-bold mb-10 text-center bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent"
           initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Projects
+          Featured Projects
         </motion.h2>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
+        <div className="grid gap-8 sm:grid-cols-2">
           {projects.map((project, idx) => (
             <motion.div
               key={idx}
-              className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 shadow-md transition-transform cursor-default hover:shadow-lg"
+              className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 shadow-md"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1, duration: 0.3 }}
+              transition={{ delay: 0.1 }}
             >
               <h3 className="text-lg font-semibold text-blue-500 dark:text-blue-400 mb-2">
                 {project.title}
@@ -81,38 +70,23 @@ const Projects: FC = () => {
               </p>
 
               <div className="flex flex-wrap gap-2 mb-4">
-                {project.tech.map((tech, tIdx) => (
-                  <span
-                    key={tIdx}
-                    className="bg-blue-600 text-white text-xs px-2 py-1 rounded-full"
-                  >
+                {project.tech.map((tech, i) => (
+                  <span key={i} className="bg-blue-600 text-white text-xs px-2 py-1 rounded-full">
                     {tech}
                   </span>
                 ))}
               </div>
 
-              <div className="flex gap-4">
-                {project.github && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-sm text-blue-500 dark:text-blue-300 hover:underline"
-                  >
-                    <GithubIcon /> GitHub
-                  </a>
-                )}
-                {project.demo && (
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-sm text-blue-500 dark:text-blue-300 hover:underline"
-                  >
-                    <ExternalLinkIcon /> Demo
-                  </a>
-                )}
-              </div>
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-sm text-blue-500 hover:underline"
+                >
+                  <GithubIcon /> GitHub
+                </a>
+              )}
             </motion.div>
           ))}
         </div>

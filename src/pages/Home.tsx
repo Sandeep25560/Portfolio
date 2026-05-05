@@ -39,7 +39,7 @@ const Home: FC = () => {
                 <motion.div className="text-center lg:text-left" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
                     <span className="pill mb-6"><FiZap className="mr-2" size={16} /> Available for Full-Stack, Backend, and React roles</span>
                     <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black mb-5 leading-tight tracking-tight">
-                        I build <span className="gradient-text">secure, fast, product-ready</span> web applications.
+                        I build <span className="text-blue-600 dark:text-blue-400">secure, fast, product-ready</span> web applications.
                     </h1>
                     <h2 className="text-xl sm:text-2xl mb-6 text-gray-700 dark:text-gray-300 min-h-[36px]">
                         <span className="text-blue-600 dark:text-blue-400 font-bold"><Typewriter words={typewriterWords} loop cursor cursorStyle="|" typeSpeed={70} deleteSpeed={45} delaySpeed={1800} /></span>
@@ -50,7 +50,7 @@ const Home: FC = () => {
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
                         {proofPoints.map((point) => (
                             <motion.div key={point.label} whileHover={{ y: -6 }} className="glass-card p-4">
-                                <p className="text-2xl font-black gradient-text">{point.value}</p>
+                                <p className="text-2xl font-black text-blue-600 dark:text-blue-400">{point.value}</p>
                                 <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">{point.label}</p>
                             </motion.div>
                         ))}

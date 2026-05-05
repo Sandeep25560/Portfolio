@@ -21,6 +21,27 @@ const About: FC = () => {
     },
   ];
 
+  const certifications = [
+    {
+      title: "AWS Certified Cloud Practitioner",
+      issuer: "Amazon Web Services",
+      status: "Certified",
+      focus: "Cloud fundamentals, AWS services, security, billing, and architecture basics",
+    },
+    {
+      title: "Microsoft Azure Fundamentals (AZ-900)",
+      issuer: "Microsoft",
+      status: "Certified",
+      focus: "Azure cloud concepts, governance, security, pricing, and core services",
+    },
+    {
+      title: "Azure Developer Associate (AZ-204)",
+      issuer: "Microsoft",
+      status: "In Progress",
+      focus: "Azure App Services, APIs, authentication, storage, monitoring, and cloud-native development",
+    },
+  ];
+
   const skills = [
     "C#", "ASP.NET Core", "REST APIs", "Entity Framework", "SQL Server", "MySQL",
     "React", "TypeScript", "JavaScript", "Tailwind CSS", "Material UI", "Jest",
@@ -102,11 +123,20 @@ const About: FC = () => {
             transition={{ duration: 0.3 }}
           >
             <h3 className="text-xl font-semibold text-blue-500 dark:text-blue-400 mb-4">Certifications</h3>
-            <ul className="space-y-3 text-gray-700 dark:text-gray-300">
-              <li>• Microsoft Azure Fundamentals (AZ-900)</li>
-              <li>• AWS Certified Cloud Practitioner</li>
-              <li>• Azure Developer Associate (AZ-204 – In Progress)</li>
-            </ul>
+            <div className="space-y-4">
+              {certifications.map((cert) => (
+                <div key={cert.title} className="rounded-2xl bg-white dark:bg-gray-900 p-4 border border-gray-200 dark:border-gray-700">
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-1">
+                    <h4 className="font-semibold text-gray-900 dark:text-white">{cert.title}</h4>
+                    <span className="rounded-full bg-blue-100 dark:bg-blue-950 px-3 py-1 text-xs font-semibold text-blue-700 dark:text-blue-300">
+                      {cert.status}
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">{cert.issuer}</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-500 mt-2 leading-relaxed">{cert.focus}</p>
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
 

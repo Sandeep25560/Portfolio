@@ -28,7 +28,7 @@ const Navbar: FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [profileModalOpen, setProfileModalOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
-  const resumeLink = "https://drive.google.com/file/d/1NPXt0eGRGW3F57en7LmZFJ_h0DJyt1W5/view?usp=drivesdk";
+  const resumeLink = "https://drive.google.com/file/d/1j-uKJ-wRT8TzZsViUP3RkaxsOJwz6qVx/view?usp=drive_link";
 
   const links: NavLink[] = [
     { name: "Home", target: "home" },

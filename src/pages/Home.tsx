@@ -20,7 +20,7 @@ const Home: FC = () => {
     const FiArrowRight = FiIcons.FiArrowRight as React.ComponentType<IconProps>;
     const FiZap = FiIcons.FiZap as React.ComponentType<IconProps>;
 
-    const resumeLink = "https://drive.google.com/file/d/1NPXt0eGRGW3F57en7LmZFJ_h0DJyt1W5/view?usp=drivesdk";
+    const resumeLink = "https://drive.google.com/file/d/1j-uKJ-wRT8TzZsViUP3RkaxsOJwz6qVx/view?usp=drive_link";
 
     const proofPoints = [
         { value: "3+", label: "Years building production systems" },

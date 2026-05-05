@@ -19,6 +19,8 @@ const Home: FC = () => {
     const FiDownload = FiIcons.FiDownload as React.ComponentType<IconProps>;
     const FiArrowRight = FiIcons.FiArrowRight as React.ComponentType<IconProps>;
 
+    const resumeLink = "https://drive.google.com/file/d/1NPXt0eGRGW3F57en7LmZFJ_h0DJyt1W5/view?usp=drivesdk";
+
     const proofPoints = [
         "3+ years production experience",
         "35% lower API latency",
@@ -113,7 +115,7 @@ const Home: FC = () => {
                             <FiLinkedin size={20} />
                         </a>
                         <a
-                            href="https://drive.google.com/file/d/1oZFKjla3EL_PQ6KeVaOX7dAcRhJpRCkG/view"
+                            href={resumeLink}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"

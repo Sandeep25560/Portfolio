@@ -13,37 +13,32 @@ interface ExperienceItem {
 const experienceData: ExperienceItem[] = [
   {
     title: "Senior Software Engineer",
-    company: "ValueLabs (Client: Mitchell)",
-    duration: "Sept 2023 – Jul 2024",
-    subtitle: "Promoted twice within 36 months: Intern → Software Engineer → Senior Software Engineer",
-    metrics: ["35% API latency improvement", "15% fewer production defects", "Enterprise healthcare workflows"],
+    company: "Cognizant",
+    duration: "June 2025 – Present",
+    subtitle: "Cloud-native full-stack engineering focused on scalable APIs, Kubernetes deployment, and enterprise delivery.",
+    metrics: ["Microservices architecture", "Docker + Kubernetes", "AWS/Azure deployment"],
     details: [
-      "Led development of scalable backend services using ASP.NET Core for enterprise insurance and claims workflows.",
-      "Improved API performance through SQL query optimization, indexing, and efficient data access patterns.",
-      "Designed secure REST APIs and authentication/authorization flows for production-grade business systems.",
-      "Collaborated with product, QA, and engineering teams to deliver reliable claims and recovery features.",
+      "Designed and implemented scalable REST APIs and microservices improving maintainability and performance.",
+      "Built secure applications using JWT authentication, RBAC, and API security best practices.",
+      "Developed reusable frontend components using React, Tailwind CSS, and Material UI.",
+      "Containerized services using Docker and deployed workloads on Kubernetes with AWS/Azure infrastructure.",
+      "Implemented distributed caching and asynchronous processing improving throughput and reducing server load.",
+      "Mentored developers, conducted code reviews, and promoted engineering best practices across teams.",
     ],
   },
   {
     title: "Software Engineer",
-    company: "ValueLabs",
-    duration: "Feb 2022 – Sept 2023",
-    metrics: ["25% faster data retrieval", "40% fewer integration issues", "React + .NET delivery"],
+    company: "ValueLabs (Client: Mitchell)",
+    duration: "Sept 2021 – Jul 2024",
+    subtitle: "Enterprise healthcare and insurance systems focused on claims, recovery workflows, scalability, and backend optimization.",
+    metrics: ["35% API improvement", "40% deployment failure reduction", "15% fewer production defects"],
     details: [
-      "Developed REST APIs and backend components using ASP.NET Core, SQL Server, and service-layer patterns.",
-      "Built reusable React components for responsive web applications and integrated them with backend APIs.",
-      "Designed database schemas and indexing strategies to improve reporting and transaction performance.",
-      "Strengthened CI/CD workflows and Git practices to improve release predictability.",
-    ],
-  },
-  {
-    title: "Software Engineer Intern",
-    company: "ValueLabs",
-    duration: "Sept 2021 – Feb 2022",
-    metrics: ["20% faster API response", "Production support exposure", "Agile delivery foundation"],
-    details: [
-      "Assisted in API development using ASP.NET MVC and SQL Server for enterprise workflows.",
-      "Supported debugging, QA validation, Azure deployment activities, and performance research.",
+      "Built and maintained enterprise healthcare applications using ASP.NET Core and React.",
+      "Improved API performance by 35% through SQL query optimization, indexing, and backend tuning.",
+      "Led system design discussions around scalability, API versioning, and maintainable architecture.",
+      "Optimized CI/CD pipelines using Jenkins and GitHub Actions reducing deployment failures by 40%.",
+      "Collaborated with QA, DevOps, and product teams to deliver high-quality production software.",
+      "Mentored junior developers and improved development quality reducing production defects by 15%.",
     ],
   },
 ];
@@ -54,10 +49,10 @@ const Experience: FC = () => {
       <div className="absolute left-0 top-24 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl" />
       <div className="section-container relative">
         <motion.div className="text-center max-w-3xl mx-auto mb-14" initial={{ opacity: 0, y: -24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.45 }}>
-          <span className="pill mb-4">Career growth with production ownership</span>
-          <h2 className="text-3xl sm:text-5xl font-black gradient-text mb-4">Experience Timeline</h2>
+          <span className="pill mb-4">Enterprise engineering experience</span>
+          <h2 className="text-3xl sm:text-5xl font-black gradient-text mb-4">Professional Experience</h2>
           <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed">
-            A progression from intern to senior engineer, focused on backend reliability, React delivery, performance tuning, and enterprise healthcare workflows.
+            Experience building scalable enterprise systems, secure APIs, cloud-native deployments, and high-performance frontend applications across healthcare, insurance, and workflow management platforms.
           </p>
         </motion.div>
 

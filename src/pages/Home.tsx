@@ -7,10 +7,10 @@ import profileImage from "../assets/profile.jpg";
 
 const Home: FC = () => {
     const typewriterWords: string[] = [
-        "Full-Stack .NET Engineer",
-        "React + TypeScript Developer",
-        "Healthcare Platform Engineer",
-        "Performance-Focused Builder",
+        "Full-Stack Software Engineer",
+        "React + ASP.NET Core Developer",
+        "Cloud-Native Systems Builder",
+        "Performance-Focused Engineer",
     ];
 
     type IconProps = { size?: number; className?: string };
@@ -23,13 +23,13 @@ const Home: FC = () => {
     const resumeLink = "https://drive.google.com/file/d/1j-uKJ-wRT8TzZsViUP3RkaxsOJwz6qVx/view?usp=drive_link";
 
     const proofPoints = [
-        { value: "3+", label: "Years building production systems" },
-        { value: "35%", label: "Lower API latency through SQL tuning" },
-        { value: "99.9%", label: "Production uptime mindset" },
-        { value: "2x", label: "Promoted within 36 months" },
+        { value: "4+", label: "Years building production systems" },
+        { value: "35%", label: "API efficiency improvement" },
+        { value: "40%", label: "Deployment failure reduction" },
+        { value: "15%", label: "Production defect reduction" },
     ];
 
-    const stack = ["ASP.NET Core", "React", "TypeScript", "SQL Server", "REST APIs", "Azure/AWS"];
+    const stack = ["ASP.NET Core", "React", "TypeScript", "SQL Server", "Docker", "Kubernetes", "AWS/Azure"];
 
     return (
         <section id="home" className="section-shell min-h-screen flex items-center pt-24 pb-16" aria-label="Home Section">
@@ -37,15 +37,15 @@ const Home: FC = () => {
             <div className="absolute top-24 right-0 h-96 w-96 rounded-full bg-purple-500/20 blur-3xl pulse-glow" />
             <div className="section-container relative grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
                 <motion.div className="text-center lg:text-left" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
-                    <span className="pill mb-6"><FiZap className="mr-2" size={16} /> Available for Full-Stack, Backend, and React roles</span>
+                    <span className="pill mb-6"><FiZap className="mr-2" size={16} /> Available for Full-Stack, Backend, React, and Cloud roles</span>
                     <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black mb-5 leading-tight tracking-tight">
-                        I build <span className="text-blue-600 dark:text-blue-400">secure, fast, product-ready</span> web applications.
+                        I build <span className="text-blue-600 dark:text-blue-400">scalable, secure, cloud-ready</span> web applications.
                     </h1>
                     <h2 className="text-xl sm:text-2xl mb-6 text-gray-700 dark:text-gray-300 min-h-[36px]">
                         <span className="text-blue-600 dark:text-blue-400 font-bold"><Typewriter words={typewriterWords} loop cursor cursorStyle="|" typeSpeed={70} deleteSpeed={45} delaySpeed={1800} /></span>
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                        Full Stack Software Engineer with 3+ years of experience building production-grade applications using ASP.NET Core, React, TypeScript, and SQL Server for healthcare and insurance platforms.
+                        Full Stack Software Engineer with 4+ years of experience building production-grade applications using ASP.NET Core, React, TypeScript, SQL Server, Docker, Kubernetes, AWS, and Azure. I focus on secure APIs, scalable systems, performance optimization, and user-focused product delivery.
                     </p>
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
                         {proofPoints.map((point) => (
@@ -78,13 +78,13 @@ const Home: FC = () => {
                             <img src={profileImage} alt="Sandeep Enamandala" className="w-full h-full object-cover" loading="eager" />
                         </div>
                         <h3 className="text-2xl font-black text-center mb-2">Engineering Snapshot</h3>
-                        <p className="text-center text-gray-600 dark:text-gray-400 mb-6">I move across UI, APIs, databases, debugging, and delivery.</p>
+                        <p className="text-center text-gray-600 dark:text-gray-400 mb-6">I move across UI, APIs, databases, cloud deployment, debugging, and delivery.</p>
                         <div className="space-y-3 text-sm">
                             {[
                                 ["Frontend", "React, TypeScript, Tailwind"],
-                                ["Backend", "ASP.NET Core, REST APIs"],
-                                ["Data", "SQL Server, MySQL, Tuning"],
-                                ["Domain", "Healthcare + Insurance"],
+                                ["Backend", "ASP.NET Core, REST APIs, JWT"],
+                                ["Cloud", "Docker, Kubernetes, AWS/Azure"],
+                                ["Data", "SQL Server, MySQL, PostgreSQL"],
                             ].map(([key, value]) => (
                                 <div key={key} className="flex justify-between rounded-2xl bg-white/70 dark:bg-gray-950/70 p-4 gap-4 border border-gray-200 dark:border-gray-800">
                                     <span className="text-gray-500 dark:text-gray-400">{key}</span>

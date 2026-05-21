@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 const About: FC = () => {
   const strengths = [
     { title: "Production Engineering", text: "Secure, scalable full-stack features across UI, APIs, and SQL-backed services." },
-    { title: "Performance Mindset", text: "Improved endpoint latency by 35% through SQL tuning and backend execution-path optimization." },
-    { title: "Healthcare & Insurance", text: "Claims, recovery, treatment tracking, and case management workflow experience." },
-    { title: "Ownership & Growth", text: "Promoted from intern to software engineer to senior software engineer within 36 months." },
+    { title: "Performance Mindset", text: "Improved API efficiency by 35% through SQL tuning, indexing, and backend optimization." },
+    { title: "Cloud-Native Delivery", text: "Hands-on experience with Docker, Kubernetes, AWS, Azure, CI/CD, and reliable deployment workflows." },
+    { title: "Enterprise Systems", text: "Healthcare, insurance, workflow automation, authentication, and data-heavy business applications." },
   ];
 
   const certifications = [
@@ -16,10 +16,10 @@ const About: FC = () => {
   ];
 
   const skillGroups = [
-    { title: "Backend", level: "Strong", skills: ["C#", "ASP.NET Core", "REST APIs", "Entity Framework", "JWT", "API Security"] },
-    { title: "Frontend", level: "Strong", skills: ["React", "TypeScript", "JavaScript", "Tailwind CSS", "Material UI", "Jest"] },
+    { title: "Backend", level: "Strong", skills: ["C#", "ASP.NET Core", "REST APIs", "Entity Framework Core", "LINQ", "JWT", "API Security"] },
+    { title: "Frontend", level: "Strong", skills: ["React", "TypeScript", "JavaScript", "Tailwind CSS", "Material UI", "HTML5/CSS3"] },
     { title: "Data", level: "Strong", skills: ["SQL Server", "MySQL", "PostgreSQL", "Indexing", "Query Optimization", "Schema Design"] },
-    { title: "Delivery", level: "Practical", skills: ["Git/GitHub", "CI/CD", "Docker", "AWS", "Azure", "Production Debugging"] },
+    { title: "Cloud & DevOps", level: "Practical", skills: ["Git/GitHub", "CI/CD", "Jenkins", "GitHub Actions", "Docker", "Kubernetes", "AWS", "Azure"] },
   ];
 
   return (
@@ -30,7 +30,7 @@ const About: FC = () => {
           <span className="pill mb-4">Engineer profile</span>
           <h2 className="text-3xl sm:text-5xl font-black gradient-text mb-5">Skills that translate into production impact</h2>
           <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed">
-            I am a Full Stack Software Engineer with 3+ years of experience delivering production-grade applications using ASP.NET Core, React, TypeScript, and SQL Server. My strongest work sits between secure backend APIs, responsive frontend delivery, database performance, and healthcare/insurance workflows.
+            I am a Full Stack Software Engineer with 4+ years of experience delivering production-grade applications using ASP.NET Core, React, TypeScript, SQL Server, Docker, Kubernetes, AWS, and Azure. My strongest work sits between secure backend APIs, responsive frontend delivery, database performance, cloud-native deployment, and enterprise workflow systems.
           </p>
         </motion.div>
 
@@ -47,9 +47,9 @@ const About: FC = () => {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
             <div>
               <h3 className="text-2xl font-black gradient-text">Technical Skill System</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">Grouped by how I use them in real delivery: build, secure, optimize, and ship.</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">Grouped by how I use them in real delivery: build, secure, optimize, deploy, and ship.</p>
             </div>
-            <span className="rounded-full bg-blue-100 dark:bg-blue-950 px-4 py-2 text-xs font-bold text-blue-700 dark:text-blue-300">React + .NET + SQL</span>
+            <span className="rounded-full bg-blue-100 dark:bg-blue-950 px-4 py-2 text-xs font-bold text-blue-700 dark:text-blue-300">React + .NET + Cloud</span>
           </div>
           <div className="grid lg:grid-cols-4 gap-5">
             {skillGroups.map((group, index) => (
@@ -59,7 +59,7 @@ const About: FC = () => {
                   <span className="text-xs font-bold text-purple-600 dark:text-purple-300">{group.level}</span>
                 </div>
                 <div className="h-2 rounded-full bg-gray-200 dark:bg-gray-800 mb-4 overflow-hidden">
-                  <motion.div className="h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-600" initial={{ width: 0 }} whileInView={{ width: index < 3 ? "88%" : "76%" }} viewport={{ once: true }} transition={{ duration: 0.8, delay: index * 0.12 }} />
+                  <motion.div className="h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-600" initial={{ width: 0 }} whileInView={{ width: index < 3 ? "88%" : "80%" }} viewport={{ once: true }} transition={{ duration: 0.8, delay: index * 0.12 }} />
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {group.skills.map((skill) => <span key={skill} className="rounded-full bg-gray-100 dark:bg-gray-800 px-3 py-1.5 text-xs font-semibold text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700">{skill}</span>)}
@@ -73,8 +73,8 @@ const About: FC = () => {
           <motion.div className="glass-card p-6" initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.3 }}>
             <h3 className="text-2xl font-black text-blue-600 dark:text-blue-400 mb-4">Education</h3>
             <div className="space-y-5 text-gray-700 dark:text-gray-300">
-              <div className="rounded-2xl bg-white/70 dark:bg-gray-950/70 p-4 border border-gray-200 dark:border-gray-800"><strong className="block text-lg text-gray-900 dark:text-white">Master of Computer Science</strong><span>Kent State University</span><br /><span className="text-sm text-gray-500 dark:text-gray-400">GPA: 3.9 / 4.0 • Dec 2025</span></div>
-              <div className="rounded-2xl bg-white/70 dark:bg-gray-950/70 p-4 border border-gray-200 dark:border-gray-800"><strong className="block text-lg text-gray-900 dark:text-white">Bachelor of Computer Science</strong><span>Anna University</span><br /><span className="text-sm text-gray-500 dark:text-gray-400">GPA: 8.65 / 10</span></div>
+              <div className="rounded-2xl bg-white/70 dark:bg-gray-950/70 p-4 border border-gray-200 dark:border-gray-800"><strong className="block text-lg text-gray-900 dark:text-white">Master of Computer Science</strong><span>Kent State University</span><br /><span className="text-sm text-gray-500 dark:text-gray-400">Dec 2025</span></div>
+              <div className="rounded-2xl bg-white/70 dark:bg-gray-950/70 p-4 border border-gray-200 dark:border-gray-800"><strong className="block text-lg text-gray-900 dark:text-white">Bachelor of Computer Science</strong><span>Anna University</span></div>
             </div>
           </motion.div>
 

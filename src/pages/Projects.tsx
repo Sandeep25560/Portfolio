@@ -8,175 +8,101 @@ const ArrowIcon = FaIcons.FaArrowRight as React.ComponentType;
 
 interface CaseStudy {
   title: string;
+  category: string;
   hook: string;
   problem: string;
   solution: string;
-  impact: string[];
+  outcome: string;
   tech: string[];
   github?: string;
 }
 
 const caseStudies: CaseStudy[] = [
   {
-    title: "SmartSpend – Predictive Financial Intelligence",
-    hook: "Built like a product for people who do not want to manually manage money every day.",
-    problem:
-      "Most budgeting tools show what happened after money is already gone. The real user problem is knowing how much is safe to spend today before the month gets risky.",
-    solution:
-      "Designed a full-stack budgeting platform with burn-rate forecasting, mood-aware spending insights, secure APIs, and dashboards that translate financial behavior into simple next actions.",
-    impact: ["ML-assisted burn-rate forecasting", "Early warning signals for risky spending", "Clean user flows for low-friction daily use"],
+    title: "SmartSpend",
+    category: "FINANCIAL INTELLIGENCE",
+    hook: "A budgeting product built around one question: what is safe to spend today?",
+    problem: "Traditional budgeting apps explain the past. They rarely help a user make a confident decision before the next purchase.",
+    solution: "Built a full-stack decision layer around burn rate, runway, transaction behavior, and early risk signals so financial data becomes an immediate next action.",
+    outcome: "Predictive runway, low-friction daily decisions, and behavior-aware financial guidance.",
     tech: ["React", "Flask", "Machine Learning", "MySQL", "REST APIs"],
     github: "https://github.com/Sandeep25560",
   },
   {
-    title: "Planventory – Inventory Planning System",
-    hook: "A real-world ordering workflow for stores that need faster weekly decisions, not another generic CRUD app.",
-    problem:
-      "Small stores often track distributor orders manually, which creates missed products, inconsistent reorder quantities, and messy weekly planning.",
-    solution:
-      "Built a planning workflow with store-level settings, distributors, product counts, weekly order drafts, JWT authentication, and backend validation to make ordering structured and repeatable.",
-    impact: ["Store-specific inventory configuration", "Weekly order planning workflow", "Secure ASP.NET Core API architecture"],
+    title: "Planventory",
+    category: "OPERATIONS SYSTEM",
+    hook: "Inventory planning designed around how a store actually prepares an order week after week.",
+    problem: "Manual distributor ordering creates missed products, inconsistent quantities, and repeated decision work.",
+    solution: "Designed store-specific inventory settings, distributor relationships, weekly order drafts, authentication, and backend validation as one repeatable workflow.",
+    outcome: "Structured weekly ordering with less ambiguity and cleaner operational data.",
     tech: ["React", "ASP.NET Core", "JWT", "MySQL", "Entity Framework"],
     github: "https://github.com/Sandeep25560",
   },
   {
-  title: "SentimentFlow – Sentiment Intelligence Platform",
-  hook: "A sentiment analysis workflow that turns speech into emotional signals and decision-ready insights.",
-  problem:
-    "Teams collect user feedback, reviews, and messages, but raw text is difficult to understand at scale. Without structured sentiment signals, useful patterns stay hidden inside unorganized feedback.",
-  solution:
-    "Built real-time speech-to-emotion system integrating Deepgram ASR and OpenAI NLP via WebSocket pipeline with sub-2-second latency; deployed on AWS with auto-scaling.",
-  impact: [
-    "NLP-based sentiment classification",
-    "Analytics-ready emotional signals",
-    "Clean workflow for unstructured feedback"
-  ],
-  tech: ["React", "Python", "Flask", "NLP", "Machine Learning"],
-  github: "https://github.com/Sandeep25560/sentimentflow",
-},
+    title: "SentimentFlow",
+    category: "AI / REAL-TIME PIPELINE",
+    hook: "Speech becomes structured emotional context instead of disappearing into a transcript.",
+    problem: "Teams collect calls, reviews, and feedback, but useful signals remain buried inside unstructured language.",
+    solution: "Built a real-time speech-to-emotion workflow using speech recognition, NLP, and a WebSocket pipeline designed to turn raw language into analytics-ready sentiment signals.",
+    outcome: "Faster interpretation of unstructured feedback and decision-ready emotional signals.",
+    tech: ["React", "Python", "Flask", "NLP", "Machine Learning"],
+    github: "https://github.com/Sandeep25560/sentimentflow",
+  },
   {
-    title: "Employee Management System",
-    hook: "A practical enterprise-style system focused on authentication, roles, data operations, and backend reliability.",
-    problem:
-      "Admin teams need a reliable way to manage employees, roles, and records without slow pages or insecure access patterns.",
-    solution:
-      "Delivered a full-stack employee portal with role-based access control, REST APIs, optimized database queries, and clean React screens for scalable admin workflows.",
-    impact: ["Role-based access control", "Optimized CRUD APIs", "Scalable dashboard patterns"],
+    title: "Employee Management",
+    category: "ENTERPRISE APPLICATION",
+    hook: "A compact enterprise system where security, roles, APIs, and data design matter more than flashy screens.",
+    problem: "Administrative workflows need reliable permissions, fast data access, and clear ownership boundaries.",
+    solution: "Built a role-aware employee portal with REST APIs, authentication, database optimization, and reusable frontend flows.",
+    outcome: "A secure admin workflow with scalable backend patterns and cleaner data operations.",
     tech: ["React", "ASP.NET Core", "MySQL", "RBAC", "REST APIs"],
     github: "https://github.com/Sandeep25560/Employee_Management",
   },
 ];
 
-const decisionSignals = [
-  "I think in user problems before technology choices.",
-  "I design APIs and database models for change, not just the first demo.",
-  "I care about measurable outcomes: latency, uptime, delivery speed, and reliability.",
-];
-
 const Projects: FC = () => {
   return (
-    <section
-      id="projects"
-      className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900 text-gray-900 dark:text-white px-4 py-20"
-    >
-      <div className="max-w-6xl mx-auto w-full">
-        <motion.div
-          className="text-center max-w-3xl mx-auto mb-12"
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <span className="inline-flex rounded-full bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 px-4 py-2 text-sm font-semibold text-blue-700 dark:text-blue-300 mb-4">
-            Case studies, not just project cards
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-            Featured Work
-          </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed">
-            These projects show how I approach product thinking, backend design, frontend usability, and real-world workflow problems.
-          </p>
-        </motion.div>
+    <section id="projects" className="relative bg-[#090909] text-white py-24 sm:py-32 overflow-hidden" aria-label="Projects Section">
+      <div className="absolute inset-0 opacity-30" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px)", backgroundSize: "48px 48px" }} />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-[0.7fr_1.3fr] gap-12 lg:gap-20 mb-20 items-end">
+          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+            <p className="font-mono text-xs tracking-[0.35em] text-lime-300 mb-5">SELECTED BUILD LOG / 04</p>
+            <h2 className="text-5xl sm:text-7xl font-black leading-[0.92] tracking-tight">Work that starts with a problem.</h2>
+          </motion.div>
+          <motion.p initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-xl sm:text-2xl text-zinc-400 leading-relaxed max-w-2xl lg:ml-auto">
+            I do not want these projects to read like a list of frameworks. Each one is a record of a product decision, an architecture choice, and the tradeoff behind it.
+          </motion.p>
+        </div>
 
-        <div className="grid gap-8">
+        <div className="border-t border-zinc-800">
           {caseStudies.map((project, idx) => (
-            <motion.article
-              key={project.title}
-              className="rounded-3xl bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 sm:p-8 shadow-md hover:shadow-xl transition-shadow"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.08, duration: 0.35 }}
-            >
-              <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-8">
+            <motion.article key={project.title} initial={{ opacity: 0, y: 36 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.45, delay: idx * 0.05 }} className="group border-b border-zinc-800 py-10 sm:py-14">
+              <div className="grid lg:grid-cols-[120px_0.8fr_1.2fr] gap-6 lg:gap-10">
+                <div className="font-mono text-5xl sm:text-6xl font-black text-zinc-800 group-hover:text-lime-300 transition-colors">0{idx + 1}</div>
                 <div>
-                  <p className="text-sm font-semibold text-purple-600 dark:text-purple-300 mb-2">Case Study 0{idx + 1}</p>
-                  <h3 className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-3">{project.title}</h3>
-                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-5">{project.hook}</p>
-
-                  <div className="flex flex-wrap gap-2 mb-5">
-                    {project.tech.map((tech) => (
-                      <span key={tech} className="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">
-                        {tech}
-                      </span>
-                    ))}
+                  <p className="font-mono text-xs tracking-[0.25em] text-lime-300 mb-3">{project.category}</p>
+                  <h3 className="text-3xl sm:text-5xl font-black mb-4">{project.title}</h3>
+                  <p className="text-zinc-300 text-lg leading-relaxed mb-6">{project.hook}</p>
+                  <div className="flex flex-wrap gap-x-4 gap-y-2 font-mono text-xs text-zinc-500">
+                    {project.tech.map((tech) => <span key={tech}>/{tech}</span>)}
                   </div>
-
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 dark:text-blue-300 hover:underline"
-                    >
-                      <GithubIcon /> View GitHub <ArrowIcon />
-                    </a>
-                  )}
+                  {project.github && <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-7 text-sm font-bold text-white border-b border-lime-300 pb-1 hover:text-lime-300 transition-colors"><GithubIcon /> SOURCE <ArrowIcon /></a>}
                 </div>
-
-                <div className="space-y-5">
-                  <div className="rounded-2xl bg-white dark:bg-gray-900 p-5 border border-gray-200 dark:border-gray-700">
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Problem</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{project.problem}</p>
-                  </div>
-
-                  <div className="rounded-2xl bg-white dark:bg-gray-900 p-5 border border-gray-200 dark:border-gray-700">
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Solution</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{project.solution}</p>
-                  </div>
-
-                  <div className="rounded-2xl bg-white dark:bg-gray-900 p-5 border border-gray-200 dark:border-gray-700">
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-3">Impact Signals</h4>
-                    <div className="grid sm:grid-cols-3 gap-3">
-                      {project.impact.map((item) => (
-                        <div key={item} className="rounded-xl bg-gray-50 dark:bg-gray-800 px-3 py-3 text-sm font-medium text-gray-700 dark:text-gray-300">
-                          {item}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                <div className="grid sm:grid-cols-3 lg:grid-cols-1 gap-5 lg:pl-10 lg:border-l lg:border-zinc-800">
+                  <div><p className="font-mono text-[11px] tracking-[0.2em] text-zinc-600 mb-2">PROBLEM</p><p className="text-sm text-zinc-400 leading-relaxed">{project.problem}</p></div>
+                  <div><p className="font-mono text-[11px] tracking-[0.2em] text-zinc-600 mb-2">SYSTEM MOVE</p><p className="text-sm text-zinc-400 leading-relaxed">{project.solution}</p></div>
+                  <div><p className="font-mono text-[11px] tracking-[0.2em] text-zinc-600 mb-2">OUTCOME</p><p className="text-sm text-zinc-200 leading-relaxed font-semibold">{project.outcome}</p></div>
                 </div>
               </div>
             </motion.article>
           ))}
         </div>
 
-        <motion.div
-          className="mt-10 rounded-3xl bg-gradient-to-r from-blue-600 to-purple-600 p-6 sm:p-8 text-white shadow-xl"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.35 }}
-        >
-          <h3 className="text-2xl font-bold mb-4">How I make engineering decisions</h3>
-          <div className="grid md:grid-cols-3 gap-4">
-            {decisionSignals.map((signal) => (
-              <div key={signal} className="rounded-2xl bg-white/10 border border-white/20 p-4 text-sm font-medium">
-                {signal}
-              </div>
-            ))}
-          </div>
-        </motion.div>
+        <div className="mt-16 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border border-zinc-800 p-6 sm:p-8">
+          <p className="font-mono text-sm text-zinc-400">PRODUCT THINKING → API DESIGN → DATA MODEL → DELIVERY</p>
+          <p className="text-sm text-zinc-500">The pattern behind the projects is the same: understand the decision first, then choose the technology.</p>
+        </div>
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 import { FC, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import * as FiIcons from "react-icons/fi";
 
 const SERVICE_ID = "service_hwu5gu6";
 const TEMPLATE_ID = "template_d63jxyj";
@@ -9,22 +10,19 @@ const PUBLIC_KEY = "afmmWhQaI1sxyJFMu";
 const Contact: FC = () => {
   const [submitted, setSubmitted] = useState(false);
 
-  const hiringSignals = [
-    "I can own React + ASP.NET Core features end-to-end.",
-    "I have shipped enterprise healthcare/insurance workflows, not just portfolio demos.",
-    "I care about reliability, latency, security, and clean handoffs across teams.",
-  ];
+  type IconProps = { size?: number; className?: string };
+  const FiMail = FiIcons.FiMail as React.ComponentType<IconProps>;
+  const FiArrowUpRight = FiIcons.FiArrowUpRight as React.ComponentType<IconProps>;
+  const FiCheck = FiIcons.FiCheck as React.ComponentType<IconProps>;
 
-  const quickFit = [
-    "Full-stack engineering roles",
-    "Backend/API-heavy .NET roles",
-    "React + TypeScript product teams",
-    "Healthcare, insurance, fintech, SaaS, and internal tools",
+  const fitSignals = [
+    "Own React + ASP.NET Core features end-to-end",
+    "Work comfortably across APIs, SQL, cloud, and production debugging",
+    "Enterprise experience across healthcare, banking, and telecom",
   ];
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     const form = e.target as HTMLFormElement;
 
     emailjs
@@ -40,130 +38,67 @@ const Contact: FC = () => {
   };
 
   return (
-    <section
-      id="contact"
-      className="min-h-screen bg-white text-black dark:bg-gray-950 dark:text-white py-20 px-6 sm:px-10"
-    >
-      <div className="max-w-6xl mx-auto">
-        <motion.div
-          className="text-center max-w-3xl mx-auto mb-12"
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <span className="inline-flex rounded-full bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 px-4 py-2 text-sm font-semibold text-blue-700 dark:text-blue-300 mb-4">
-            Looking for a builder who can contribute quickly?
-          </span>
-          <h2 className="text-4xl font-bold mb-4 text-blue-600 dark:text-blue-400">
-            Let’s talk about where I can create impact
-          </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed">
-            I am best suited for teams that need a full-stack engineer who can move across UI, APIs, databases, debugging, and production-focused delivery.
-          </p>
-        </motion.div>
+    <section id="contact" className="section-shell py-24 sm:py-28" aria-label="Contact Section">
+      <div className="absolute -left-24 bottom-12 h-80 w-80 rounded-full bg-blue-500/10 blur-3xl" />
+      <div className="absolute -right-24 top-20 h-96 w-96 rounded-full bg-purple-500/10 blur-3xl" />
 
-        <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-8 items-start">
-          <motion.div
-            className="space-y-6"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.45 }}
-          >
-            <div className="bg-gray-100 dark:bg-gray-800 rounded-3xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
-              <h3 className="text-2xl font-bold mb-4">Why hiring managers remember me</h3>
-              <div className="space-y-3">
-                {hiringSignals.map((signal) => (
-                  <div key={signal} className="rounded-2xl bg-white dark:bg-gray-900 p-4 text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700">
-                    {signal}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl p-6 shadow-lg text-white">
-              <h3 className="text-xl font-bold mb-4">Strong fit for</h3>
-              <div className="grid sm:grid-cols-2 gap-3">
-                {quickFit.map((fit) => (
-                  <div key={fit} className="rounded-2xl bg-white/10 border border-white/20 px-4 py-3 text-sm font-semibold">
-                    {fit}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="bg-gray-100 dark:bg-gray-800 rounded-3xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
-              <h3 className="text-xl font-bold mb-2">Fast recruiter summary</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                Full Stack Software Engineer with 3+ years of experience in ASP.NET Core, React, TypeScript, and SQL Server. Production background in enterprise healthcare and insurance systems with measurable impact in delivery speed, latency, and uptime.
-              </p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="bg-gray-100 dark:bg-gray-800 rounded-3xl p-8 shadow-lg border border-gray-200 dark:border-gray-700"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.45 }}
-          >
-            <h3 className="text-2xl font-bold mb-2">Send a message</h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-6 text-sm">
-              Hiring teams, recruiters, and founders can reach out for full-stack, backend, or React-focused opportunities.
+      <div className="section-container relative">
+        <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-14 items-start">
+          <motion.div initial={{ opacity: 0, x: -28 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+            <span className="pill mb-5">Open to the right engineering team</span>
+            <h2 className="text-4xl sm:text-6xl font-black leading-[1.02] tracking-tight mb-6">
+              Need someone who can move from <span className="gradient-text">UI to API to production?</span>
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8 max-w-2xl">
+              I am a Full Stack Software Engineer with 6+ years of enterprise experience. I am strongest on teams that need practical ownership across React, ASP.NET Core, SQL, cloud services, debugging, and reliable delivery.
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block mb-1 font-semibold">
-                  Name
-                </label>
-                <input
-                  required
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Your name"
-                  className="w-full px-4 py-3 rounded-xl bg-white text-black border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-900 dark:text-white dark:border-gray-700"
-                />
+            <div className="border-t border-gray-200 dark:border-gray-800 mb-8">
+              {fitSignals.map((signal, index) => (
+                <motion.div key={signal} initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.05 }} className="flex gap-4 py-5 border-b border-gray-200 dark:border-gray-800">
+                  <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-300"><FiCheck size={15} /></span>
+                  <p className="font-semibold text-gray-800 dark:text-gray-200 leading-relaxed">{signal}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            <a href="mailto:sandeep.enamandala@gmail.com" className="group inline-flex items-center gap-3 rounded-full bg-gray-950 dark:bg-white dark:text-gray-950 px-5 py-3 text-white font-bold transition-transform hover:-translate-y-0.5">
+              <FiMail size={18} /> sandeep.enamandala@gmail.com <FiArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, x: 28 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative">
+            <div className="absolute -inset-3 rounded-[2.2rem] bg-gradient-to-br from-blue-500/15 via-transparent to-purple-500/15 blur-xl" />
+            <div className="relative rounded-[2rem] border border-gray-200 dark:border-gray-800 bg-white/85 dark:bg-gray-900/80 shadow-xl p-6 sm:p-8 backdrop-blur-xl">
+              <div className="flex items-start justify-between gap-4 mb-7">
+                <div>
+                  <p className="text-xs font-black uppercase tracking-[0.22em] text-purple-600 dark:text-purple-300 mb-2">Start a conversation</p>
+                  <h3 className="text-2xl sm:text-3xl font-black">Tell me what you are building.</h3>
+                </div>
+                <span className="text-5xl font-black text-gray-100 dark:text-white/[0.05] select-none">05</span>
               </div>
 
-              <div>
-                <label htmlFor="email" className="block mb-1 font-semibold">
-                  Email
-                </label>
-                <input
-                  required
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="you@company.com"
-                  className="w-full px-4 py-3 rounded-xl bg-white text-black border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-900 dark:text-white dark:border-gray-700"
-                />
-              </div>
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div>
+                  <label htmlFor="name" className="block mb-2 text-sm font-bold text-gray-700 dark:text-gray-300">Name</label>
+                  <input required type="text" id="name" name="name" placeholder="Your name" className="w-full px-4 py-3.5 rounded-2xl bg-gray-50/80 dark:bg-gray-950/60 border border-gray-200 dark:border-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-950 dark:text-white" />
+                </div>
 
-              <div>
-                <label htmlFor="message" className="block mb-1 font-semibold">
-                  Message
-                </label>
-                <textarea
-                  required
-                  id="message"
-                  name="message"
-                  rows={5}
-                  placeholder="Tell me about the role, team, or problem you are hiring for."
-                  className="w-full px-4 py-3 rounded-xl bg-white text-black border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none dark:bg-gray-900 dark:text-white dark:border-gray-700"
-                />
-              </div>
+                <div>
+                  <label htmlFor="email" className="block mb-2 text-sm font-bold text-gray-700 dark:text-gray-300">Email</label>
+                  <input required type="email" id="email" name="email" placeholder="you@company.com" className="w-full px-4 py-3.5 rounded-2xl bg-gray-50/80 dark:bg-gray-950/60 border border-gray-200 dark:border-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-950 dark:text-white" />
+                </div>
 
-              <motion.button
-                type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-2xl text-white font-semibold transition duration-300 dark:bg-blue-500 dark:hover:bg-blue-600"
-                whileHover={{ scale: 1.02 }}
-              >
-                {submitted ? "Message sent — thank you ✅" : "Start the conversation"}
-              </motion.button>
-            </form>
+                <div>
+                  <label htmlFor="message" className="block mb-2 text-sm font-bold text-gray-700 dark:text-gray-300">Message</label>
+                  <textarea required id="message" name="message" rows={6} placeholder="Tell me about the role, team, or problem you are hiring for." className="w-full px-4 py-3.5 rounded-2xl bg-gray-50/80 dark:bg-gray-950/60 border border-gray-200 dark:border-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none text-gray-950 dark:text-white" />
+                </div>
+
+                <motion.button type="submit" whileHover={{ y: -2 }} whileTap={{ scale: 0.99 }} className="w-full rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 px-6 py-4 text-white font-black shadow-lg shadow-blue-500/20">
+                  {submitted ? "Message sent — thank you ✓" : "Send message"}
+                </motion.button>
+              </form>
+            </div>
           </motion.div>
         </div>
       </div>

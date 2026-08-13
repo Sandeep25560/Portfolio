@@ -1,270 +1,108 @@
-import { FC, useState, useEffect } from "react";
+import { FC, useEffect, useState } from "react";
 import * as FiIcons from "react-icons/fi";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-scroll";
 import { useTheme } from "../hooks/useTheme";
 import profileImage from "../assets/profile.jpg";
-import largeProfileImage from "../assets/profile.jpg";
-
-// Typed icons
-type IconProps = { size?: number; className?: string };
-const FiMenu = FiIcons.FiMenu as React.ComponentType<IconProps>;
-const FiX = FiIcons.FiX as React.ComponentType<IconProps>;
-const FiSun = FiIcons.FiSun as React.ComponentType<IconProps>;
-const FiMoon = FiIcons.FiMoon as React.ComponentType<IconProps>;
-const FiXCircle = FiIcons.FiXCircle as React.ComponentType<IconProps>;
-const FiGithub = FiIcons.FiGithub as React.ComponentType<IconProps>;
-const FiLinkedin = FiIcons.FiLinkedin as React.ComponentType<IconProps>;
-const FiFileText = FiIcons.FiFileText as React.ComponentType<IconProps>;
-const FiDownload = FiIcons.FiDownload as React.ComponentType<IconProps>;
-
-interface NavLink {
-  name: string;
-  target: string;
-}
 
 const Navbar: FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [profileModalOpen, setProfileModalOpen] = useState(false);
+  const [profileOpen, setProfileOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+
+  type IconProps = { size?: number; className?: string };
+  const FiMenu = FiIcons.FiMenu as React.ComponentType<IconProps>;
+  const FiX = FiIcons.FiX as React.ComponentType<IconProps>;
+  const FiSun = FiIcons.FiSun as React.ComponentType<IconProps>;
+  const FiMoon = FiIcons.FiMoon as React.ComponentType<IconProps>;
+  const FiGithub = FiIcons.FiGithub as React.ComponentType<IconProps>;
+  const FiLinkedin = FiIcons.FiLinkedin as React.ComponentType<IconProps>;
+  const FiFileText = FiIcons.FiFileText as React.ComponentType<IconProps>;
+
   const resumeLink = "https://drive.google.com/file/d/1j-uKJ-wRT8TzZsViUP3RkaxsOJwz6qVx/view?usp=drive_link";
-
-  const links: NavLink[] = [
-    { name: "Home", target: "home" },
-    { name: "About", target: "about" },
-    { name: "Experience", target: "experience" },
-    { name: "Projects", target: "projects" },
-    { name: "Contact", target: "contact" },
-  ];
+  const links = ["Home", "About", "Experience", "Projects", "Contact"];
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 18);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as HTMLElement;
-      if (menuOpen && !target.closest(".mobile-menu") && !target.closest(".menu-button")) {
-        setMenuOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [menuOpen]);
-
-  const toggleProfileModal = () => {
-    setProfileModalOpen(!profileModalOpen);
-    if (menuOpen) setMenuOpen(false);
-  };
 
   return (
     <>
-      <header className={`fixed top-0 left-0 w-full shadow-md z-50 transition-all duration-300 ${
-        scrolled 
-          ? "bg-white/90 dark:bg-gray-800/90 backdrop-blur-md" 
-          : "bg-white/80 dark:bg-gray-800/80"
-      }`}>
-
-        <nav className="max-w-7xl mx-auto px-6 flex justify-between items-center py-4">
-          {/* Logo with Profile Image */}
-          <motion.div 
-            className="flex items-center gap-3 cursor-pointer group"
-            whileHover={{ scale: 1.03 }}
-            onClick={toggleProfileModal}
-          >
-            <div className="relative">
-              <motion.div
-                className="w-10 h-10 rounded-full overflow-hidden border-2 border-blue-400 group-hover:border-purple-500 transition-colors"
-                whileHover={{ rotate: 5 }}
-              >
-                <img 
-                  src={profileImage} 
-                  alt="Sandeep Enamandala" 
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </motion.div>
-              <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-400 rounded-full border-2 border-white dark:border-gray-900"></div>
+      <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/90 dark:bg-gray-950/90 shadow-lg backdrop-blur-xl border-b border-gray-200/70 dark:border-gray-800" : "bg-white/80 dark:bg-gray-950/80 backdrop-blur-md"}`}>
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[76px] flex items-center justify-between gap-5">
+          <button onClick={() => setProfileOpen(true)} className="flex items-center gap-3 text-left group" aria-label="Open profile card">
+            <div className="relative shrink-0">
+              <div className="w-11 h-11 rounded-2xl overflow-hidden ring-2 ring-blue-400/70 group-hover:ring-purple-500 transition-colors shadow-sm">
+                <img src={profileImage} alt="Sandeep Enamandala" className="w-full h-full object-cover" />
+              </div>
+              <span className="absolute -right-1 -bottom-1 h-3.5 w-3.5 rounded-full bg-emerald-400 border-2 border-white dark:border-gray-950" />
             </div>
-            
-            <div className="flex flex-col">
-              <span className="font-bold text-lg bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-                Sandeep Enamandala
-              </span>
-              <span className="text-xs text-gray-500 dark:text-gray-400">
-                Full Stack Dev
-              </span>
+            <div className="min-w-0">
+              <p className="font-black text-base sm:text-lg leading-tight gradient-text truncate">Sandeep Enamandala</p>
+              <p className="text-[11px] sm:text-xs font-semibold text-gray-500 dark:text-gray-400 truncate">Full Stack Software Engineer</p>
             </div>
-          </motion.div>
+          </button>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {links.map((link) => (
-              <Link
-                key={link.target}
-                to={link.target}
-                smooth={true}
-                duration={500}
-                offset={-80}
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors font-medium text-sm uppercase tracking-wider cursor-pointer relative group"
-                activeClass="text-blue-500 dark:text-blue-400"
-                spy={true}
-              >
-                {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 dark:bg-blue-400 transition-all group-hover:w-full"></span>
+          <div className="hidden md:flex items-center gap-7">
+            {links.map((name) => (
+              <Link key={name} to={name.toLowerCase()} smooth duration={500} offset={-76} spy activeClass="text-blue-600 dark:text-blue-400" className="relative cursor-pointer text-sm font-bold text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors group">
+                {name}
+                <span className="absolute -bottom-2 left-0 h-0.5 w-0 bg-gradient-to-r from-blue-500 to-purple-600 transition-all group-hover:w-full" />
               </Link>
             ))}
-
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-              aria-label="Toggle theme"
-            >
-              {theme === 'dark' ? <FiSun size={20} /> : <FiMoon size={20} />}
+            <button onClick={toggleTheme} className="h-10 w-10 inline-flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-gray-900/80 text-gray-700 dark:text-gray-300 hover:-translate-y-0.5 transition-transform" aria-label="Toggle theme">
+              {theme === "dark" ? <FiSun size={18} /> : <FiMoon size={18} />}
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center gap-4">
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-              aria-label="Toggle theme"
-            >
-              {theme === 'dark' ? <FiSun size={20} /> : <FiMoon size={20} />}
+          <div className="md:hidden flex items-center gap-2">
+            <button onClick={toggleTheme} className="h-10 w-10 inline-flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-800 text-gray-700 dark:text-gray-300" aria-label="Toggle theme">
+              {theme === "dark" ? <FiSun size={18} /> : <FiMoon size={18} />}
             </button>
-            
-            <button 
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="menu-button p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-              aria-label="Toggle menu"
-            >
-              {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+            <button onClick={() => setMenuOpen(!menuOpen)} className="h-10 w-10 inline-flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-800 text-gray-700 dark:text-gray-300" aria-label="Toggle navigation">
+              {menuOpen ? <FiX size={21} /> : <FiMenu size={21} />}
             </button>
           </div>
+        </nav>
 
-          {/* Mobile Menu */}
+        <AnimatePresence>
           {menuOpen && (
-            <div className="mobile-menu absolute top-full left-0 w-full bg-white dark:bg-gray-800 shadow-lg md:hidden">
-              <div className="px-6 py-4 flex flex-col gap-4">
-                {links.map((link) => (
-                  <Link
-                    key={link.target}
-                    to={link.target}
-                    smooth={true}
-                    duration={500}
-                    offset={-80}
-                    onClick={() => setMenuOpen(false)}
-                    className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors font-medium py-2 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
-                    activeClass="text-blue-500 dark:text-blue-400 bg-gray-100 dark:bg-gray-700"
-                    spy={true}
-                  >
-                    {link.name}
+            <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="md:hidden border-t border-gray-200 dark:border-gray-800 bg-white/95 dark:bg-gray-950/95 backdrop-blur-xl px-4 py-4 shadow-xl">
+              <div className="max-w-7xl mx-auto grid gap-1">
+                {links.map((name, index) => (
+                  <Link key={name} to={name.toLowerCase()} smooth duration={500} offset={-76} onClick={() => setMenuOpen(false)} className="cursor-pointer flex items-center justify-between rounded-2xl px-4 py-3 text-sm font-bold text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-blue-950/30">
+                    <span>{name}</span><span className="text-xs font-black text-gray-300 dark:text-gray-700">0{index + 1}</span>
                   </Link>
                 ))}
               </div>
-            </div>
+            </motion.div>
           )}
-        </nav>
+        </AnimatePresence>
       </header>
 
-      {/* Profile Modal */}
       <AnimatePresence>
-        {profileModalOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] flex items-center justify-center bg-black/70 backdrop-blur-sm"
-            onClick={() => setProfileModalOpen(false)}
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              className="relative bg-white dark:bg-gray-900 rounded-3xl max-w-md w-full mx-4 p-6 shadow-2xl border border-gray-200 dark:border-gray-800"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                onClick={() => setProfileModalOpen(false)}
-                className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300"
-              >
-                <FiXCircle size={24} />
-              </button>
+        {profileOpen && (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[60] bg-gray-950/65 backdrop-blur-sm flex items-center justify-center p-4" onClick={() => setProfileOpen(false)}>
+            <motion.div initial={{ opacity: 0, scale: 0.94, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.94, y: 20 }} onClick={(e) => e.stopPropagation()} className="relative w-full max-w-md rounded-[2rem] border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 shadow-2xl p-7 overflow-hidden">
+              <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-purple-500/15 blur-3xl" />
+              <button onClick={() => setProfileOpen(false)} className="absolute top-5 right-5 h-9 w-9 rounded-full border border-gray-200 dark:border-gray-800 inline-flex items-center justify-center text-gray-500"><FiX size={18} /></button>
 
-              <div className="flex flex-col items-center gap-6">
-                <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-400 dark:border-blue-600 shadow-xl">
-                  <img 
-                    src={largeProfileImage} 
-                    alt="Sandeep Enamandala" 
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
+              <div className="relative">
+                <div className="w-24 h-24 rounded-3xl overflow-hidden ring-4 ring-blue-100 dark:ring-blue-950 mb-5"><img src={profileImage} alt="Sandeep Enamandala" className="w-full h-full object-cover" /></div>
+                <p className="text-xs font-black uppercase tracking-[0.2em] text-purple-600 dark:text-purple-300 mb-2">Engineer profile</p>
+                <h2 className="text-3xl font-black mb-2">Sandeep Enamandala</h2>
+                <p className="font-bold text-blue-600 dark:text-blue-400 mb-4">Full Stack Software Engineer</p>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">6+ years building secure, scalable enterprise systems across healthcare, banking, and telecom.</p>
+
+                <div className="flex gap-3 mb-5">
+                  <a href="https://github.com/Sandeep25560" target="_blank" rel="noopener noreferrer" className="h-11 w-11 rounded-full border border-gray-200 dark:border-gray-800 inline-flex items-center justify-center"><FiGithub size={19} /></a>
+                  <a href="https://www.linkedin.com/in/enamandala" target="_blank" rel="noopener noreferrer" className="h-11 w-11 rounded-full border border-gray-200 dark:border-gray-800 inline-flex items-center justify-center"><FiLinkedin size={19} /></a>
                 </div>
 
-                <div className="text-center">
-                  <h2 className="text-3xl font-black text-gray-900 dark:text-white">Sandeep Enamandala</h2>
-                  <p className="text-blue-500 dark:text-blue-400 font-semibold">Full Stack Developer</p>
-                  <p className="mt-2 text-gray-600 dark:text-gray-300 max-w-md">
-                    Building secure, scalable systems with React, ASP.NET Core, and SQL.
-                  </p>
-                </div>
-
-                <div className="flex flex-col gap-4 w-full">
-                  <div className="flex justify-center gap-4">
-                    <a 
-                      href="https://github.com/Sandeep25560" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:scale-110 transition-all hover:text-gray-900 dark:hover:text-white"
-                      aria-label="GitHub"
-                    >
-                      <FiGithub size={20} />
-                    </a>
-                    <a 
-                      href="https://www.linkedin.com/in/enamandala" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:scale-110 transition-all hover:text-blue-600"
-                      aria-label="LinkedIn"
-                    >
-                      <FiLinkedin size={20} />
-                    </a>
-                  </div>
-
-                  <div className="flex flex-col gap-3">
-                    <motion.a
-                      href={resumeLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ y: -2, scale: 1.01 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="group relative overflow-hidden flex items-center justify-center gap-3 px-5 py-3.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-bold shadow-lg shadow-blue-500/25"
-                    >
-                      <span className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-colors" />
-                      <FiFileText size={20} />
-                      <span>View Resume</span>
-                    </motion.a>
-
-                    <motion.a
-                      href={resumeLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ y: -2, scale: 1.01 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="flex items-center justify-center gap-3 px-5 py-3.5 border-2 border-blue-500 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/30 rounded-2xl font-bold transition-colors"
-                    >
-                      <FiDownload size={20} />
-                      <span>Download Resume</span>
-                    </motion.a>
-                  </div>
-                </div>
+                <a href={resumeLink} target="_blank" rel="noopener noreferrer" className="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 px-5 py-3.5 text-white font-black shadow-lg shadow-blue-500/20"><FiFileText size={18} /> View Resume</a>
               </div>
             </motion.div>
           </motion.div>

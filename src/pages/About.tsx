@@ -2,11 +2,18 @@ import { FC } from "react";
 import { motion } from "framer-motion";
 
 const About: FC = () => {
-  const engineeringLoop = [
-    { step: "01", title: "Model the problem", text: "Start with the workflow, constraints, data shape, and failure points before reaching for a framework." },
-    { step: "02", title: "Build the contract", text: "Define clear APIs, validation, authentication, and service boundaries so frontend and backend can evolve safely." },
-    { step: "03", title: "Protect the data path", text: "Tune SQL, reduce unnecessary work, cache where it earns its keep, and keep production behavior observable." },
-    { step: "04", title: "Ship for reality", text: "Automate delivery, test critical paths, monitor releases, and design for the people who will operate the system after launch." },
+  const process = [
+    { step: "01", title: "Model the workflow", text: "Start with the user path, constraints, data shape, and failure points before choosing implementation details." },
+    { step: "02", title: "Design the contract", text: "Define APIs, validation, authentication, and service boundaries so frontend and backend can evolve safely." },
+    { step: "03", title: "Protect the data path", text: "Tune SQL, reduce unnecessary work, cache where it helps, and keep production behavior observable." },
+    { step: "04", title: "Ship for reality", text: "Automate delivery, test critical paths, monitor releases, and make the system easier to operate after launch." },
+  ];
+
+  const skillGroups = [
+    { label: "Application Core", skills: ["C#", ".NET Core", "ASP.NET Core", "ASP.NET MVC", "Web API", "Entity Framework Core", "Dapper", "LINQ"] },
+    { label: "Experience Layer", skills: ["React", "Angular", "TypeScript", "JavaScript", "HTML5", "CSS3", "Bootstrap"] },
+    { label: "Data & Security", skills: ["SQL Server", "MySQL", "JWT", "OAuth 2.0", "Azure AD", "Query Optimization", "Caching"] },
+    { label: "Cloud & Delivery", skills: ["AWS", "Azure", "Docker", "Azure DevOps", "AWS CodePipeline", "Git", "CI/CD", "CloudWatch"] },
   ];
 
   const certifications = [
@@ -15,89 +22,88 @@ const About: FC = () => {
     { title: "Azure Developer Associate (AZ-204)", issuer: "Microsoft", status: "In Progress" },
   ];
 
-  const skillGroups = [
-    { title: "Application Core", marker: "BUILD", skills: ["C#", ".NET Core", "ASP.NET Core", "ASP.NET MVC", "Web API", "Entity Framework Core", "Dapper", "LINQ"] },
-    { title: "Experience Layer", marker: "INTERACT", skills: ["React", "Angular", "TypeScript", "JavaScript", "HTML5", "CSS3", "Bootstrap"] },
-    { title: "Data & Security", marker: "PROTECT", skills: ["SQL Server", "MySQL", "JWT", "OAuth 2.0", "Azure AD", "Query Optimization", "Caching"] },
-    { title: "Cloud & Delivery", marker: "SHIP", skills: ["AWS", "Azure", "Docker", "Azure DevOps", "AWS CodePipeline", "Git", "CI/CD", "CloudWatch"] },
-  ];
-
   return (
-    <section id="about" className="section-shell py-24" aria-label="About Section">
-      <div className="absolute right-0 top-16 h-96 w-96 rounded-full bg-cyan-500/10 blur-3xl" />
+    <section id="about" className="section-shell py-24 sm:py-28" aria-label="About Section">
+      <div className="absolute -right-24 top-16 h-96 w-96 rounded-full bg-violet-500/10 blur-3xl" />
       <div className="section-container relative">
-        <motion.div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-10 items-end mb-14" initial={{ opacity: 0, y: -24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-          <div>
-            <span className="pill mb-4">How I think as an engineer</span>
-            <h2 className="text-3xl sm:text-5xl font-black leading-tight">Not a stack list. <span className="gradient-text">An engineering operating system.</span></h2>
-          </div>
-          <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed border-l-2 border-violet-500 pl-6">
-            I am a Full Stack Software Engineer with 6+ years of enterprise experience. Across healthcare, banking, and telecom, the pattern has stayed consistent: understand the workflow, design clean service boundaries, keep the data path fast, secure access, and make releases easier to operate.
-          </p>
-        </motion.div>
-
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 mb-12">
-          {engineeringLoop.map((item, index) => (
-            <motion.article key={item.step} className="glass-card p-6 relative overflow-hidden" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.06, duration: 0.35 }} whileHover={{ y: -6 }}>
-              <span className="absolute -right-2 -top-5 text-7xl font-black text-gray-100 dark:text-white/[0.04]">{item.step}</span>
-              <p className="text-xs font-black tracking-[0.22em] text-violet-600 dark:text-violet-400 mb-5">PHASE {item.step}</p>
-              <h3 className="text-xl font-black mb-3">{item.title}</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{item.text}</p>
-            </motion.article>
-          ))}
+        <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-16 items-end mb-16">
+          <motion.div initial={{ opacity: 0, x: -28 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+            <span className="pill mb-5">How I engineer</span>
+            <h2 className="text-4xl sm:text-6xl font-black leading-[1.02] tracking-tight">
+              A practical operating system for <span className="gradient-text">production software.</span>
+            </h2>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:border-l-2 lg:border-violet-400 lg:pl-8">
+            <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+              I am a Full Stack Software Engineer with 6+ years of enterprise experience across healthcare, banking, and telecom. My work sits at the intersection of secure APIs, responsive interfaces, SQL performance, cloud delivery, and production reliability.
+            </p>
+          </motion.div>
         </div>
 
-        <motion.div className="glass-card p-6 sm:p-8 mb-10" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.35 }}>
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-7">
+        <div className="grid lg:grid-cols-[0.72fr_1.28fr] gap-8 lg:gap-12 mb-16">
+          <motion.aside initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="lg:sticky lg:top-28 lg:self-start">
+            <p className="text-xs font-black uppercase tracking-[0.24em] text-blue-600 dark:text-blue-400 mb-3">Engineering loop</p>
+            <h3 className="text-3xl font-black mb-4">From ambiguity to a system people can trust.</h3>
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">The tools change from project to project. The sequence I use to reduce risk stays remarkably consistent.</p>
+          </motion.aside>
+
+          <div className="border-t border-gray-200 dark:border-gray-800">
+            {process.map((item, index) => (
+              <motion.article key={item.step} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.05 }} className="grid sm:grid-cols-[90px_0.8fr_1.2fr] gap-4 sm:gap-6 py-7 border-b border-gray-200 dark:border-gray-800 items-start">
+                <div className="text-4xl font-black text-gray-200 dark:text-white/[0.08]">{item.step}</div>
+                <h4 className="text-xl font-black text-gray-950 dark:text-white">{item.title}</h4>
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">{item.text}</p>
+              </motion.article>
+            ))}
+          </div>
+        </div>
+
+        <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="rounded-[2rem] border border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-gray-900/70 shadow-xl overflow-hidden mb-12">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 p-6 sm:p-8 border-b border-gray-200 dark:border-gray-800">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-gray-500 dark:text-gray-400 mb-2">My toolchain by responsibility</p>
-              <h3 className="text-2xl sm:text-3xl font-black">From request to release</h3>
+              <p className="text-xs font-black uppercase tracking-[0.22em] text-purple-600 dark:text-purple-300 mb-2">Toolchain by responsibility</p>
+              <h3 className="text-2xl sm:text-3xl font-black">Build → interact → protect → ship</h3>
             </div>
             <span className="rounded-full bg-gray-950 dark:bg-white text-white dark:text-gray-950 px-4 py-2 text-xs font-black">.NET • Web • Data • Cloud</span>
           </div>
 
-          <div className="grid lg:grid-cols-4 gap-5">
+          <div className="divide-y divide-gray-200 dark:divide-gray-800">
             {skillGroups.map((group, index) => (
-              <motion.div key={group.title} whileHover={{ y: -6 }} className="rounded-3xl bg-white/75 dark:bg-gray-950/70 border border-gray-200 dark:border-gray-800 p-5">
-                <div className="flex items-center justify-between gap-3 mb-5">
-                  <h4 className="text-lg font-black text-gray-900 dark:text-white">{group.title}</h4>
-                  <span className="text-[10px] font-black tracking-[0.16em] text-blue-600 dark:text-blue-400">{group.marker}</span>
+              <motion.div key={group.label} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.04 }} className="grid lg:grid-cols-[220px_1fr] gap-4 p-6 sm:px-8">
+                <div>
+                  <p className="text-sm font-black text-blue-600 dark:text-blue-400">0{index + 1}</p>
+                  <h4 className="text-lg font-black mt-1">{group.label}</h4>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {group.skills.map((skill) => <span key={skill} className="rounded-full bg-gray-100 dark:bg-gray-800 px-3 py-1.5 text-xs font-semibold text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700">{skill}</span>)}
+                  {group.skills.map((skill) => <span key={skill} className="rounded-full bg-blue-50 dark:bg-blue-950/30 border border-blue-100 dark:border-blue-900 px-3 py-1.5 text-xs font-semibold text-blue-700 dark:text-blue-300">{skill}</span>)}
                 </div>
-                <div className="mt-5 h-1 rounded-full bg-gray-100 dark:bg-gray-800 overflow-hidden"><motion.div className="h-full bg-gradient-to-r from-cyan-500 to-violet-500" initial={{ width: 0 }} whileInView={{ width: `${92 - index * 4}%` }} viewport={{ once: true }} transition={{ duration: 0.8, delay: index * 0.1 }} /></div>
               </motion.div>
             ))}
           </div>
         </motion.div>
 
-        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-6">
-          <motion.div className="glass-card p-6 sm:p-8" initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.3 }}>
-            <p className="text-xs font-black uppercase tracking-[0.22em] text-gray-500 dark:text-gray-400 mb-3">Education timeline</p>
-            <h3 className="text-2xl font-black mb-6">Computer science, from foundation to specialization</h3>
-            <div className="space-y-5">
-              <div className="rounded-3xl bg-gray-950 text-white dark:bg-white dark:text-gray-950 p-5">
-                <div className="flex flex-wrap justify-between gap-3"><strong className="text-lg">Master of Science, Computer Science</strong><span className="text-sm font-bold opacity-70">Aug 2024 – Dec 2025</span></div>
-                <p className="mt-2 opacity-80">Kent State University</p>
+        <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-6">
+          <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="rounded-[2rem] border border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-gray-900/70 shadow-xl p-6 sm:p-8">
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-blue-600 dark:text-blue-400 mb-3">Education</p>
+            <h3 className="text-2xl font-black mb-7">Computer science foundation and specialization</h3>
+            <div className="space-y-6">
+              <div className="grid sm:grid-cols-[1fr_auto] gap-3 pb-6 border-b border-gray-200 dark:border-gray-800">
+                <div><h4 className="font-black text-lg">Master of Science, Computer Science</h4><p className="text-gray-600 dark:text-gray-400 mt-1">Kent State University</p></div><span className="text-sm font-bold text-gray-500">Aug 2024 – Dec 2025</span>
               </div>
-              <div className="rounded-3xl border border-gray-200 dark:border-gray-800 p-5 bg-white/70 dark:bg-gray-950/60">
-                <div className="flex flex-wrap justify-between gap-3"><strong className="text-lg">Bachelor of Science, Computer Science</strong><span className="text-sm font-bold text-gray-500">Jun 2017 – Jul 2021</span></div>
-                <p className="mt-2 text-gray-600 dark:text-gray-400">Anna University, Chennai</p>
+              <div className="grid sm:grid-cols-[1fr_auto] gap-3">
+                <div><h4 className="font-black text-lg">Bachelor of Science, Computer Science</h4><p className="text-gray-600 dark:text-gray-400 mt-1">Anna University, Chennai</p></div><span className="text-sm font-bold text-gray-500">Jun 2017 – Jul 2021</span>
               </div>
             </div>
           </motion.div>
 
-          <motion.div className="glass-card p-6 sm:p-8" initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.3 }}>
-            <p className="text-xs font-black uppercase tracking-[0.22em] text-gray-500 dark:text-gray-400 mb-3">Credentials</p>
+          <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="rounded-[2rem] border border-gray-200 dark:border-gray-800 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 p-6 sm:p-8">
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-purple-600 dark:text-purple-300 mb-3">Credentials</p>
             <h3 className="text-2xl font-black mb-6">Cloud learning that supports the work</h3>
-            <div className="space-y-3">
+            <div className="divide-y divide-purple-100 dark:divide-purple-900/40">
               {certifications.map((cert) => (
-                <div key={cert.title} className="rounded-2xl bg-white/70 dark:bg-gray-950/70 p-4 border border-gray-200 dark:border-gray-800">
-                  <div className="flex flex-wrap items-center justify-between gap-3">
-                    <div><h4 className="font-bold text-gray-900 dark:text-white">{cert.title}</h4><p className="text-sm text-gray-500 mt-1">{cert.issuer}</p></div>
-                    <span className="rounded-full bg-violet-100 dark:bg-violet-950/50 px-3 py-1 text-xs font-bold text-violet-700 dark:text-violet-300">{cert.status}</span>
-                  </div>
+                <div key={cert.title} className="py-4 first:pt-0 last:pb-0 flex flex-wrap items-start justify-between gap-3">
+                  <div><h4 className="font-bold">{cert.title}</h4><p className="text-sm text-gray-500 mt-1">{cert.issuer}</p></div>
+                  <span className="rounded-full bg-white/80 dark:bg-gray-950/60 border border-purple-100 dark:border-purple-900 px-3 py-1 text-xs font-bold text-purple-700 dark:text-purple-300">{cert.status}</span>
                 </div>
               ))}
             </div>

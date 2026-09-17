@@ -19,24 +19,22 @@ const Home: FC = () => {
     const FiDownload = FiIcons.FiDownload as React.ComponentType<IconProps>;
     const FiArrowRight = FiIcons.FiArrowRight as React.ComponentType<IconProps>;
     const FiActivity = FiIcons.FiActivity as React.ComponentType<IconProps>;
-    const FiMapPin = FiIcons.FiMapPin as React.ComponentType<IconProps>;
 
-    const resumeLink = "https://drive.google.com/file/d/1j-uKJ-wRT8TzZsViUP3RkaxsOJwz6qVx/view?usp=drive_link";
+    const resumeLink = `${process.env.PUBLIC_URL}/Sandeep_Enamandala_Resume.pdf`;
 
     const proofPoints = [
-        { value: "6+", label: "Years in enterprise software" },
-        { value: "28%", label: "Scalability improvement" },
-        { value: "26%", label: "Transaction processing gain" },
-        { value: "3", label: "Industries engineered across" },
+        { value: "4+", label: "Years of experience" },
+        { value: "100K+", label: "Requests served daily" },
+        { value: "35%", label: "API efficiency improvement" },
+        { value: "99.9%", label: "Production uptime" },
     ];
 
     const careerPath = [
-        { year: "2024 → Now", company: "UnitedHealth Group", role: ".NET Developer", domain: "Healthcare", signal: "ASP.NET Core • AWS • SQL Server" },
-        { year: "2022 → 2024", company: "ValueLabs", role: "Senior Software Engineer", domain: "Banking", signal: ".NET Core • Angular • Azure" },
-        { year: "2020 → 2021", company: "AT&T", role: "Software Engineer", domain: "Telecom", signal: "ASP.NET • Angular • SQL" },
+        { year: "Jun 2025 → Present", company: "Cognizant", role: "Senior Software Engineer", domain: "Cloud-native applications", signal: "ASP.NET Core • React • Kubernetes" },
+        { year: "Sep 2021 → Jul 2024", company: "ValueLabs", role: "Software Engineer", domain: "Healthcare", signal: "ASP.NET Core • React • SQL" },
     ];
 
-    const stack = ["C#", "ASP.NET Core", "React", "Angular", "TypeScript", "SQL Server", "AWS", "Azure"];
+    const stack = ["C#", "ASP.NET Core", "React", "Docker", "TypeScript", "SQL Server", "AWS", "Azure"];
 
     return (
         <section id="home" className="section-shell min-h-screen flex items-center pt-24 pb-16" aria-label="Home Section">
@@ -47,7 +45,6 @@ const Home: FC = () => {
                 <motion.div className="text-center lg:text-left" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
                     <div className="flex flex-wrap justify-center lg:justify-start items-center gap-3 mb-6">
                         <span className="pill"><FiActivity className="mr-2" size={16} /> Building systems that have to work in production</span>
-                        <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400"><FiMapPin size={14} /> Kent, Ohio</span>
                     </div>
 
                     <p className="text-sm sm:text-base font-black uppercase tracking-[0.28em] text-violet-600 dark:text-violet-400 mb-4">Sandeep Enamandala</p>
@@ -60,7 +57,7 @@ const Home: FC = () => {
                     </h2>
 
                     <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                        Full Stack Software Engineer with 6+ years of enterprise experience across healthcare, banking, and telecom. I build secure .NET services, responsive web applications, optimized SQL workflows, and cloud-backed systems that are easier to operate, scale, and evolve.
+                        Full Stack Software Engineer with 4+ years of experience building scalable, production-grade applications using ASP.NET Core, React, TypeScript, and SQL Server. I design secure REST APIs and distributed systems serving 100K+ requests a day, with cloud-native delivery on AWS and Azure.
                     </p>
 
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
@@ -92,7 +89,7 @@ const Home: FC = () => {
                 <motion.div className="relative mx-auto w-full max-w-lg" initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.15, duration: 0.6 }}>
                     <div className="absolute -inset-4 rounded-[2.4rem] bg-gradient-to-br from-cyan-500/20 via-blue-500/10 to-violet-500/20 blur-2xl" />
                     <div className="relative glass-card p-6 sm:p-8 overflow-hidden">
-                        <div className="absolute top-0 right-0 text-[7rem] font-black leading-none text-gray-100 dark:text-white/[0.03] select-none">06</div>
+                        <div className="absolute top-0 right-0 text-[7rem] font-black leading-none text-gray-100 dark:text-white/[0.03] select-none">04</div>
 
                         <div className="relative flex items-center gap-4 mb-8">
                             <div className="w-20 h-20 rounded-3xl overflow-hidden ring-4 ring-white dark:ring-gray-800 shadow-xl shrink-0">
@@ -100,7 +97,7 @@ const Home: FC = () => {
                             </div>
                             <div>
                                 <p className="text-xs uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400 font-bold">Career architecture</p>
-                                <h3 className="text-2xl font-black mt-1">Three industries. One engineering thread.</h3>
+                                <h3 className="text-2xl font-black mt-1">Full-stack delivery. Production impact.</h3>
                             </div>
                         </div>
 

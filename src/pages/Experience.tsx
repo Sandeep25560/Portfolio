@@ -12,50 +12,45 @@ interface ExperienceItem {
 
 const experienceData: ExperienceItem[] = [
   {
-    title: ".NET Developer",
-    company: "UnitedHealth Group",
-    duration: "Oct 2024 – Present",
-    subtitle: "Healthcare engineering across secure APIs, distributed services, cloud delivery, and high-availability data workflows.",
-    metrics: ["28% scalability improvement", "AWS + ASP.NET Core", "Secure healthcare systems"],
-    details: [
-      "Designed microservices using ASP.NET Core and AWS ECS, improving application scalability by 28% across distributed healthcare systems.",
-      "Developed REST APIs with .NET Core and AWS Lambda for event-driven healthcare workflows and system interoperability.",
-      "Optimized SQL Server data access with Entity Framework Core for reliable, high-availability transaction processing.",
-      "Implemented JWT and OAuth authentication to strengthen application security and access control.",
-      "Automated delivery with AWS CodePipeline and Git and built asynchronous workflows with AWS SQS and .NET background services.",
-      "Improved observability and performance using CloudWatch, structured logging, reusable middleware, Redis caching, and profiling.",
+    "title": "Senior Software Engineer",
+    "company": "Cognizant",
+    "duration": "June 2025 – Present",
+    "subtitle": "Production-grade microservices, secure APIs, responsive React interfaces, and cloud-native deployments.",
+    "metrics": [
+      "15+ microservices",
+      "100K+ requests/day",
+      "99.9% uptime"
     ],
+    "details": [
+      "Designed and deployed 15+ microservices using ASP.NET Core, Kubernetes, and AWS, serving 100K+ requests/day and reducing response latency by 35%.",
+      "Built secure REST APIs with JWT authentication, role-based access control, and API security best practices for 50K+ active users.",
+      "Developed reusable React, Tailwind CSS, and Material UI components, improving page load performance by 25%.",
+      "Implemented Redis distributed caching and RabbitMQ asynchronous processing, reducing server load by 40%.",
+      "Containerized applications with Docker and orchestrated services on Kubernetes across AWS and Azure, enabling zero-downtime deployments and elastic scaling.",
+      "Led cloud-native deployment initiatives that improved scalability and reduced deployment failures by 30%.",
+      "Mentored junior developers, conducted architecture reviews, and enforced coding best practices, reducing code review cycles by 20%."
+    ]
   },
   {
-    title: "Senior Software Engineer",
-    company: "ValueLabs",
-    duration: "Jan 2022 – Jul 2024",
-    subtitle: "Enterprise banking applications combining .NET services, Angular interfaces, Azure cloud workloads, and SQL performance engineering.",
-    metrics: ["26% processing improvement", "Azure cloud delivery", "High-volume SQL workloads"],
-    details: [
-      "Developed enterprise banking applications using ASP.NET MVC and .NET Core, improving transaction processing efficiency by 26%.",
-      "Built RESTful APIs with ASP.NET Web API and Entity Framework for reliable integration between banking services.",
-      "Implemented Azure App Services and Azure Functions to support scalable cloud and serverless workloads.",
-      "Optimized SQL Server queries and stored procedures to reduce latency for high-volume financial transactions.",
-      "Implemented Azure Active Directory authentication and automated CI/CD pipelines with Azure DevOps.",
-      "Built responsive Angular and Bootstrap interfaces and used Azure Redis Cache and .NET Core microservices to improve scalability.",
+    "title": "Software Engineer",
+    "company": "ValueLabs",
+    "duration": "September 2021 – July 2024",
+    "subtitle": "Full-stack enterprise healthcare applications for claims and recovery workflows.",
+    "metrics": [
+      "1M+ records/month",
+      "50% faster queries",
+      "2 weeks → 3-day releases"
     ],
-  },
-  {
-    title: "Software Engineer",
-    company: "AT&T",
-    duration: "Jun 2020 – Dec 2021",
-    subtitle: "Telecom web platforms focused on scalable ASP.NET services, Angular experiences, API integration, SQL performance, and production reliability.",
-    metrics: ["25% application improvement", "21% UI improvement", "Telecom platform engineering"],
-    details: [
-      "Developed enterprise web applications using ASP.NET and C#, improving application performance by 25% for high-volume telecom workflows.",
-      "Engineered RESTful APIs using ASP.NET Web API and integrated third-party telecom services through secure protocols.",
-      "Designed relational database schemas and optimized complex SQL queries across large production datasets.",
-      "Built reusable Angular components integrated with .NET services, improving UI responsiveness by 21%.",
-      "Automated build and deployment processes through CI/CD pipelines and applied caching to reduce repeated backend processing.",
-      "Used NUnit testing, structured logging, and performance profiling to improve reliability, maintainability, and production diagnostics.",
-    ],
-  },
+    "details": [
+      "Built and maintained ASP.NET Core and React healthcare applications processing 1M+ records monthly.",
+      "Improved API performance by 35% through payload optimization, response caching, and refactoring critical service endpoints.",
+      "Tuned queries, indexing, and normalization across datasets exceeding 5M rows, reducing average query execution time by 50%.",
+      "Strengthened Jenkins and GitHub Actions CI/CD pipelines, reducing deployment failures by 40% and release cycles from 2 weeks to 3 days.",
+      "Led system design discussions on scalability, API versioning, and database architecture for a platform serving 25K+ users.",
+      "Mentored junior engineers and reduced production defects by 15% through structured code reviews and TDD.",
+      "Collaborated with QA, DevOps, and Product teams to deliver software across 10+ sprint cycles."
+    ]
+  }
 ];
 
 const Experience: FC = () => {
@@ -64,10 +59,10 @@ const Experience: FC = () => {
       <div className="absolute left-0 top-24 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl" />
       <div className="section-container relative">
         <motion.div className="text-center max-w-3xl mx-auto mb-14" initial={{ opacity: 0, y: -24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.45 }}>
-          <span className="pill mb-4">6+ years • Healthcare • Banking • Telecom</span>
-          <h2 className="text-3xl sm:text-5xl font-black gradient-text mb-4">Engineering Across Industries</h2>
+          <span className="pill mb-4">4+ years • Full Stack • Cloud Native</span>
+          <h2 className="text-3xl sm:text-5xl font-black gradient-text mb-4">Professional Experience</h2>
           <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed">
-            My career spans telecom, banking, and healthcare—building secure APIs, responsive applications, cloud workloads, and data-intensive systems with measurable production impact.
+            At Cognizant and ValueLabs, I build secure APIs, responsive React applications, distributed services, and data-intensive systems with measurable production impact.
           </p>
         </motion.div>
 

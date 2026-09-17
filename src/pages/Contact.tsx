@@ -18,7 +18,7 @@ const Contact: FC = () => {
   const fitSignals = [
     "Own React + ASP.NET Core features end-to-end",
     "Work comfortably across APIs, SQL, cloud, and production debugging",
-    "Enterprise experience across healthcare, banking, and telecom",
+    "Design microservices and distributed systems for production scale",
   ];
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -50,7 +50,7 @@ const Contact: FC = () => {
               Need someone who can move from <span className="gradient-text">UI to API to production?</span>
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8 max-w-2xl">
-              I am a Full Stack Software Engineer with 6+ years of enterprise experience. I am strongest on teams that need practical ownership across React, ASP.NET Core, SQL, cloud services, debugging, and reliable delivery.
+              I am a Full Stack Software Engineer with 4+ years of experience building production-grade applications. I bring expertise in React, ASP.NET Core, SQL Server, secure APIs, system design, and cloud-native delivery with AWS and Azure.
             </p>
 
             <div className="border-t border-gray-200 dark:border-gray-800 mb-8">
@@ -62,9 +62,10 @@ const Contact: FC = () => {
               ))}
             </div>
 
-            <a href="mailto:sandeep.enamandala@gmail.com" className="group inline-flex items-center gap-3 rounded-full bg-gray-950 dark:bg-white dark:text-gray-950 px-5 py-3 text-white font-bold transition-transform hover:-translate-y-0.5">
-              <FiMail size={18} /> sandeep.enamandala@gmail.com <FiArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <a href="mailto:sandeep.enamandala@gmail.com" className="group inline-flex max-w-full items-center gap-3 rounded-full bg-gray-950 dark:bg-white dark:text-gray-950 px-5 py-3 text-white font-bold transition-transform hover:-translate-y-0.5">
+              <FiMail size={18} className="shrink-0" /> <span className="min-w-0 break-all">sandeep.enamandala@gmail.com</span> <FiArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
+            <p className="mt-4"><a href="tel:+12342963538" className="font-semibold text-blue-600 dark:text-blue-400">+1 234-296-3538</a></p>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, x: 28 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative">

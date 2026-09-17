@@ -20,7 +20,7 @@ const Navbar: FC = () => {
   const FiLinkedin = FiIcons.FiLinkedin as React.ComponentType<IconProps>;
   const FiFileText = FiIcons.FiFileText as React.ComponentType<IconProps>;
 
-  const resumeLink = "https://drive.google.com/file/d/1j-uKJ-wRT8TzZsViUP3RkaxsOJwz6qVx/view?usp=drive_link";
+  const resumeLink = `${process.env.PUBLIC_URL}/Sandeep_Enamandala_Resume.pdf`;
   const links = ["Home", "About", "Experience", "Projects", "Contact"];
 
   useEffect(() => {
@@ -95,7 +95,7 @@ const Navbar: FC = () => {
                 <p className="text-xs font-black uppercase tracking-[0.2em] text-purple-600 dark:text-purple-300 mb-2">Engineer profile</p>
                 <h2 className="text-3xl font-black mb-2">Sandeep Enamandala</h2>
                 <p className="font-bold text-blue-600 dark:text-blue-400 mb-4">Full Stack Software Engineer</p>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">6+ years building secure, scalable enterprise systems across healthcare, banking, and telecom.</p>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">4+ years building scalable applications with ASP.NET Core, React, TypeScript, SQL Server, AWS, and Azure.</p>
 
                 <div className="flex gap-3 mb-5">
                   <a href="https://github.com/Sandeep25560" target="_blank" rel="noopener noreferrer" className="h-11 w-11 rounded-full border border-gray-200 dark:border-gray-800 inline-flex items-center justify-center"><FiGithub size={19} /></a>

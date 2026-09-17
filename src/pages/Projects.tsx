@@ -18,10 +18,71 @@ interface CaseStudy {
 }
 
 const caseStudies: CaseStudy[] = [
-  { title: "SmartSpend", category: "FINANCIAL INTELLIGENCE", hook: "A budgeting product built around one question: what is safe to spend today?", problem: "Traditional budgeting apps explain the past instead of helping users make a confident decision before the next purchase.", solution: "Built a decision layer around burn rate, runway, transaction behavior, and early risk signals.", outcome: "Predictive runway and behavior-aware financial guidance.", tech: ["React", "Flask", "Machine Learning", "MySQL", "REST APIs"], github: "https://github.com/Sandeep25560" },
-  { title: "Planventory", category: "OPERATIONS SYSTEM", hook: "Inventory planning designed around how a store actually prepares weekly orders.", problem: "Manual distributor ordering creates missed products, inconsistent quantities, and repeated decision work.", solution: "Designed store settings, distributor relationships, weekly drafts, authentication, and backend validation as one workflow.", outcome: "Structured weekly ordering with cleaner operational data.", tech: ["React", "ASP.NET Core", "JWT", "MySQL", "Entity Framework"], github: "https://github.com/Sandeep25560" },
-  { title: "SentimentFlow", category: "AI / REAL-TIME PIPELINE", hook: "Speech becomes structured emotional context instead of disappearing into a transcript.", problem: "Useful signals remain buried inside calls, reviews, and unstructured language.", solution: "Built a real-time speech-to-emotion workflow using speech recognition, NLP, and WebSockets.", outcome: "Decision-ready emotional signals from unstructured feedback.", tech: ["React", "Python", "Flask", "NLP", "Machine Learning"], github: "https://github.com/Sandeep25560/sentimentflow" },
-  { title: "Employee Management", category: "ENTERPRISE APPLICATION", hook: "A compact enterprise system where roles, APIs, and data design matter more than flashy screens.", problem: "Administrative workflows need reliable permissions, fast data access, and clear ownership boundaries.", solution: "Built a role-aware portal with REST APIs, authentication, database optimization, and reusable frontend flows.", outcome: "A secure admin workflow with scalable backend patterns.", tech: ["React", "ASP.NET Core", "MySQL", "RBAC", "REST APIs"], github: "https://github.com/Sandeep25560/Employee_Management" },
+  {
+    "title": "Cloud-Native E-Commerce Platform",
+    "category": "MICROSERVICES • 2024",
+    "hook": "Independent catalog, order, inventory, and payment services built for scalable commerce.",
+    "problem": "Support event-driven order processing under peak traffic of 10K concurrent users.",
+    "solution": "Built ASP.NET Core, React, and TypeScript services with RabbitMQ and Redis. Deployed Docker containers on Kubernetes (AWS EKS) with auto-scaling, health checks, and GitHub Actions CI/CD.",
+    "outcome": "45% lower checkout latency under peak traffic, with zero-downtime deployments.",
+    "tech": [
+      "ASP.NET Core",
+      "React",
+      "TypeScript",
+      "RabbitMQ",
+      "Redis",
+      "Docker",
+      "Kubernetes",
+      "AWS EKS",
+      "GitHub Actions"
+    ]
+  },
+  {
+    "title": "Real-Time Chat Application",
+    "category": "REAL-TIME MESSAGING • 2024",
+    "hook": "A scalable messaging platform with sub-100ms message delivery.",
+    "problem": "Support 5,000+ concurrent connections across multiple server instances.",
+    "solution": "Built ASP.NET Core, SignalR, and WebSockets messaging with a Redis backplane, JWT authentication, and route protection. Deployed on Azure with load balancing.",
+    "outcome": "5,000+ concurrent connections, 99.9% uptime, and seamless failover across regions.",
+    "tech": [
+      "ASP.NET Core",
+      "SignalR",
+      "WebSockets",
+      "Redis",
+      "JWT",
+      "Azure"
+    ]
+  },
+  {
+    "title": "SmartSpend: Predictive Financial Intelligence Platform",
+    "category": "FINANCIAL INTELLIGENCE",
+    "hook": "A full-stack budgeting platform for predicting financial runway and detecting risky spending patterns.",
+    "problem": "Estimate burn rate and identify financial risk before overspending occurs.",
+    "solution": "Built ML-assisted forecasting, REST APIs, normalized database schemas, and interactive dashboards for transaction tracking and early risk detection.",
+    "outcome": "Early risk alerts reduced user overspend incidents by 30%.",
+    "tech": [
+      "ML-Assisted Forecasting",
+      "REST APIs",
+      "Database Design",
+      "Interactive Dashboards"
+    ]
+  },
+  {
+    "title": "Planventory: Inventory Planning System",
+    "category": "INVENTORY & ORDER PLANNING",
+    "hook": "A full-stack system for inventory management and weekly order planning.",
+    "problem": "Manage products, distributors, and orders with efficient access across 500K+ SKUs.",
+    "solution": "Designed relational models and APIs, implemented JWT authentication and backend validation, and optimized SQL queries and indexing.",
+    "outcome": "Efficient data retrieval at scale across 500K+ SKUs.",
+    "tech": [
+      "REST APIs",
+      "SQL",
+      "Indexing",
+      "JWT",
+      "Relational Models",
+      "Backend Validation"
+    ]
+  }
 ];
 
 const Projects: FC = () => (
@@ -51,8 +112,8 @@ const Projects: FC = () => (
                 {project.github && <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-black text-purple-600 dark:text-purple-300"><GithubIcon /> View source <ArrowIcon /></a>}
               </div>
               <div className="grid sm:grid-cols-3 lg:grid-cols-1 gap-3 lg:border-l lg:border-gray-200 dark:lg:border-gray-800 lg:pl-7">
-                <div className="rounded-2xl bg-gray-50 dark:bg-gray-950/60 p-4"><p className="text-[10px] font-black tracking-[0.18em] text-gray-400 mb-2">PROBLEM</p><p className="text-sm text-gray-600 dark:text-gray-400">{project.problem}</p></div>
-                <div className="rounded-2xl bg-purple-50 dark:bg-purple-950/20 p-4"><p className="text-[10px] font-black tracking-[0.18em] text-purple-500 mb-2">SYSTEM MOVE</p><p className="text-sm text-gray-700 dark:text-gray-300">{project.solution}</p></div>
+                <div className="rounded-2xl bg-gray-50 dark:bg-gray-950/60 p-4"><p className="text-[10px] font-black tracking-[0.18em] text-gray-400 mb-2">ENGINEERING GOAL</p><p className="text-sm text-gray-600 dark:text-gray-400">{project.problem}</p></div>
+                <div className="rounded-2xl bg-purple-50 dark:bg-purple-950/20 p-4"><p className="text-[10px] font-black tracking-[0.18em] text-purple-500 mb-2">IMPLEMENTATION</p><p className="text-sm text-gray-700 dark:text-gray-300">{project.solution}</p></div>
                 <div className="rounded-2xl bg-blue-50 dark:bg-blue-950/20 p-4"><p className="text-[10px] font-black tracking-[0.18em] text-blue-500 mb-2">OUTCOME</p><p className="text-sm font-semibold text-gray-800 dark:text-gray-200">{project.outcome}</p></div>
               </div>
             </div>

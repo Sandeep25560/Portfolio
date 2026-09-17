@@ -10,17 +10,122 @@ const About: FC = () => {
   ];
 
   const skillGroups = [
-    { label: "Application Core", skills: ["C#", ".NET Core", "ASP.NET Core", "ASP.NET MVC", "Web API", "Entity Framework Core", "Dapper", "LINQ"] },
-    { label: "Experience Layer", skills: ["React", "Angular", "TypeScript", "JavaScript", "HTML5", "CSS3", "Bootstrap"] },
-    { label: "Data & Security", skills: ["SQL Server", "MySQL", "JWT", "OAuth 2.0", "Azure AD", "Query Optimization", "Caching"] },
-    { label: "Cloud & Delivery", skills: ["AWS", "Azure", "Docker", "Azure DevOps", "AWS CodePipeline", "Git", "CI/CD", "CloudWatch"] },
-  ];
+  {
+    "label": "Languages",
+    "skills": [
+      "C#",
+      "TypeScript",
+      "JavaScript",
+      "Python",
+      "SQL"
+    ]
+  },
+  {
+    "label": "Backend",
+    "skills": [
+      "ASP.NET Core",
+      "REST APIs",
+      "Entity Framework Core",
+      "LINQ",
+      "JWT Authentication",
+      "gRPC",
+      "SignalR",
+      "API Security",
+      "SOLID Principles",
+      "Design Patterns"
+    ]
+  },
+  {
+    "label": "Frontend",
+    "skills": [
+      "React",
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS",
+      "Material UI"
+    ]
+  },
+  {
+    "label": "Databases",
+    "skills": [
+      "SQL Server",
+      "MySQL",
+      "PostgreSQL",
+      "Redis",
+      "Query Optimization",
+      "Indexing"
+    ]
+  },
+  {
+    "label": "Messaging & Caching",
+    "skills": [
+      "RabbitMQ",
+      "Kafka",
+      "Redis",
+      "SignalR",
+      "WebSockets",
+      "Event-Driven Architecture"
+    ]
+  },
+  {
+    "label": "Architecture",
+    "skills": [
+      "Microservices",
+      "Distributed Systems",
+      "System Design",
+      "Event-Driven Architecture",
+      "Scalability"
+    ]
+  },
+  {
+    "label": "Testing",
+    "skills": [
+      "xUnit",
+      "NUnit",
+      "Moq",
+      "Integration Testing",
+      "Unit Testing",
+      "TDD"
+    ]
+  },
+  {
+    "label": "DevOps & Tools",
+    "skills": [
+      "Git",
+      "GitHub",
+      "CI/CD",
+      "Jenkins",
+      "GitHub Actions",
+      "Docker",
+      "Kubernetes",
+      "AWS",
+      "Azure"
+    ]
+  }
+];
 
   const certifications = [
-    { title: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services", status: "Certified" },
-    { title: "Microsoft Azure Fundamentals (AZ-900)", issuer: "Microsoft", status: "Certified" },
-    { title: "Azure Developer Associate (AZ-204)", issuer: "Microsoft", status: "In Progress" },
-  ];
+  {
+    "title": "AWS Certified Developer Associate",
+    "issuer": "Amazon Web Services",
+    "status": "Certified"
+  },
+  {
+    "title": "AWS Certified Cloud Practitioner",
+    "issuer": "Amazon Web Services",
+    "status": "Certified"
+  },
+  {
+    "title": "Microsoft Azure Developer Associate",
+    "issuer": "Microsoft",
+    "status": "Certified"
+  },
+  {
+    "title": "Microsoft Azure Fundamentals",
+    "issuer": "Microsoft",
+    "status": "Certified"
+  }
+];
 
   return (
     <section id="about" className="section-shell py-24 sm:py-28" aria-label="About Section">
@@ -35,7 +140,7 @@ const About: FC = () => {
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:border-l-2 lg:border-violet-400 lg:pl-8">
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              I am a Full Stack Software Engineer with 6+ years of enterprise experience across healthcare, banking, and telecom. My work sits at the intersection of secure APIs, responsive interfaces, SQL performance, cloud delivery, and production reliability.
+              I am a Full Stack Software Engineer with 4+ years of experience in secure REST APIs, microservices, and distributed systems. My work combines ASP.NET Core, React, TypeScript, and SQL Server with Docker, Kubernetes, AWS, and Azure, achieving up to 35% better API efficiency and 99.9% uptime.
             </p>
           </motion.div>
         </div>
@@ -88,10 +193,7 @@ const About: FC = () => {
             <h3 className="text-2xl font-black mb-7">Computer science foundation and specialization</h3>
             <div className="space-y-6">
               <div className="grid sm:grid-cols-[1fr_auto] gap-3 pb-6 border-b border-gray-200 dark:border-gray-800">
-                <div><h4 className="font-black text-lg">Master of Science, Computer Science</h4><p className="text-gray-600 dark:text-gray-400 mt-1">Kent State University</p></div><span className="text-sm font-bold text-gray-500">Aug 2024 – Dec 2025</span>
-              </div>
-              <div className="grid sm:grid-cols-[1fr_auto] gap-3">
-                <div><h4 className="font-black text-lg">Bachelor of Science, Computer Science</h4><p className="text-gray-600 dark:text-gray-400 mt-1">Anna University, Chennai</p></div><span className="text-sm font-bold text-gray-500">Jun 2017 – Jul 2021</span>
+                <div><h4 className="font-black text-lg">Master of Computer Science</h4><p className="text-gray-600 dark:text-gray-400 mt-1">Kent State University</p></div>
               </div>
             </div>
           </motion.div>

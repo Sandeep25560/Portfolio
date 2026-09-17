@@ -1,50 +1,92 @@
-<<<<<<< HEAD
-# Portfolio
-=======
-# Getting Started with Create React App
+# Sandeep Enamandala · Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Personal portfolio for a **Full Stack Software Engineer** with **4+ years of experience** building applications with ASP.NET Core, React, TypeScript, SQL Server, AWS, and Azure.
 
-## Available Scripts
+[Portfolio website](https://portfolio-sandeeps-projects-1fc0f8c5.vercel.app/) · [LinkedIn](https://www.linkedin.com/in/enamandala/) · [Résumé](public/Sandeep_Enamandala_Resume.pdf) · [Contact](mailto:sandeep.enamandala@gmail.com)
 
-In the project directory, you can run:
+## What's inside
 
-### `npm start`
+- **Home:** professional introduction, production metrics, career overview, and résumé link.
+- **About:** engineering approach, technical skills, education, and cloud certifications.
+- **Experience:** roles at Cognizant and ValueLabs, including responsibilities and measurable outcomes.
+- **Projects:** Cloud-Native E-Commerce, Real-Time Chat, SmartSpend, and Planventory.
+- **Contact:** email and phone links, plus an EmailJS-powered message form.
+- Responsive layouts, light/dark themes, animated sections, smooth navigation, and a profile card.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Portfolio stack
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This repository contains the **frontend portfolio website**, not the backend services or project implementations described in its content.
 
-### `npm test`
+| Purpose | Technology |
+| --- | --- |
+| UI | React 19, TypeScript |
+| Styling | Tailwind CSS 3, PostCSS |
+| Animation | Framer Motion, React Simple Typewriter |
+| Navigation & icons | React Scroll, React Icons |
+| Contact form | EmailJS Browser SDK |
+| Build tooling | Create React App / react-scripts 5 |
+| Tests | Jest, React Testing Library |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Featured work
 
-### `npm run build`
+| Project | Engineering focus |
+| --- | --- |
+| Cloud-Native E-Commerce Platform | ASP.NET Core and React microservices, RabbitMQ, Redis, Docker, AWS EKS, and CI/CD |
+| Real-Time Chat Application | SignalR, WebSockets, Redis backplane, JWT authentication, and Azure |
+| SmartSpend | ML-assisted financial runway forecasting, transaction dashboards, and early risk alerts |
+| Planventory | Relational inventory models, weekly ordering, secure APIs, and SQL optimization |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Project descriptions appear in [src/pages/Projects.tsx](src/pages/Projects.tsx). This repository does not include their source code.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Run locally
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Install Node.js and npm, then clone and start the application:
 
-### `npm run eject`
+```bash
+git clone https://github.com/Sandeep25560/Portfolio.git
+cd Portfolio
+npm ci
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Open [localhost:3000](http://localhost:3000). The development server reloads when source files change.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Checks and production build
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+# Run tests once
+npm test -- --watchAll=false --runInBand
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Create an optimized production build
+npm run build
+```
 
-## Learn More
+Production output is written to `build/`. For a static hosting setup, use `npm run build` as the build command and `build` as the output directory.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Where to edit
 
-To learn React, check out the [React documentation](https://reactjs.org/).
->>>>>>> master
+| Content | File |
+| --- | --- |
+| Introduction, highlights, career summary | [src/pages/Home.tsx](src/pages/Home.tsx) |
+| Skills, education, certifications | [src/pages/About.tsx](src/pages/About.tsx) |
+| Professional experience | [src/pages/Experience.tsx](src/pages/Experience.tsx) |
+| Project descriptions | [src/pages/Projects.tsx](src/pages/Projects.tsx) |
+| Contact details and EmailJS configuration | [src/pages/Contact.tsx](src/pages/Contact.tsx) |
+| Navigation, profile card, résumé link | [src/components/Navbar.tsx](src/components/Navbar.tsx) |
+| Theme behavior | [src/hooks/useTheme.ts](src/hooks/useTheme.ts) |
+| Shared styles | [src/index.css](src/index.css) |
+| Browser title and description | [public/index.html](public/index.html) |
+| App metadata | [public/manifest.json](public/manifest.json) |
+| Downloadable résumé | [public/Sandeep_Enamandala_Resume.pdf](public/Sandeep_Enamandala_Resume.pdf) |
+| Content and link regression test | [src/App.test.tsx](src/App.test.tsx) |
+
+Keep repeated details in Home, About, Experience, Contact, and the profile card consistent when updating the résumé.
+
+### Contact form configuration
+
+The current form uses EmailJS service, template, and public-key values configured in `src/pages/Contact.tsx`. If adapting this repository, replace them with your own EmailJS configuration and ensure the template matches the form fields: `name`, `email`, and `message`. Configure the recipient in EmailJS; changing the visible email link alone does not change the form's recipient. Never place private credentials in client-side code.
+
+## Contact
+
+**Sandeep Enamandala**  
+[ sandeep.enamandala@gmail.com ](mailto:sandeep.enamandala@gmail.com) · [LinkedIn](https://www.linkedin.com/in/enamandala/) · [GitHub](https://github.com/Sandeep25560)
